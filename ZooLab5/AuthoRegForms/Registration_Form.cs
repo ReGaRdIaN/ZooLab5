@@ -18,11 +18,22 @@ namespace ZooLab5.AuthoRegForms
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Завантаження форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Registration_Form_Load(object sender, EventArgs e)
         {
             ChangePass_textBox.PasswordChar = '*';
         }
 
+        /// <summary>
+        /// Кнопка підтвердження регестрації
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Registr_button_Click(object sender, EventArgs e)
         {
             if(UserCheck())
@@ -58,6 +69,10 @@ namespace ZooLab5.AuthoRegForms
             }
         }
 
+        /// <summary>
+        /// Перевірка наявності такого ж самого юзера
+        /// </summary>
+        /// <returns></returns>
         private Boolean UserCheck()
         {
             var loginUser = ChangeLog_textBox.Text;

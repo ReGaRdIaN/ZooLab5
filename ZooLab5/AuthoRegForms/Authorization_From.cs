@@ -22,6 +22,11 @@ namespace ZooLab5
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Функція завантаження форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Authorization_From_Load(object sender, EventArgs e)
         {
             Authorization_Button.Location = new Point(ClientSize.Width / 2 - Authorization_Button.Width / 2, 139);
@@ -30,22 +35,31 @@ namespace ZooLab5
             UserPass_textBox.MaxLength = 50;
         }
         
+        /// <summary>
+        /// Елемент "реєстрації"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NotReg_Label_Click(object sender, EventArgs e)
         {
             Registration_Form RegFrom = new Registration_Form();
             RegFrom.Show();
             this.Hide();
         }
-
         private void NotReg_Label_MouseMove_1(object sender, MouseEventArgs e)
         {
             NotReg_Label.ForeColor = Color.Black;
         }
-
         private void NotReg_Label_MouseLeave_1(object sender, EventArgs e)
         {
             NotReg_Label.ForeColor = Color.DimGray;
         }
+
+        /// <summary>
+        /// Кнопка авторизації
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Authorization_Button_Click(object sender, EventArgs e)
         {
             var loginUser = UserLogin_TextBox.Text;
@@ -83,6 +97,11 @@ namespace ZooLab5
             }
         }
 
+        /// <summary>
+        /// Видалення усії процесів після закриття рішення
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Authorization_From_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Diagnostics.Process.GetCurrentProcess().Kill();

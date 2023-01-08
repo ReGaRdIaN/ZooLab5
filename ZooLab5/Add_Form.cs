@@ -18,7 +18,16 @@ namespace ZooLab5
         {
             InitializeComponent();
         }
+        private void Add_Form_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        /// <summary>
+        /// Зберегти додані дані
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveAdd_button_Click(object sender, EventArgs e)
         {
             DB.openConnection();
@@ -49,11 +58,6 @@ namespace ZooLab5
             }
 
             DB.closeConnection();
-        }
-
-        private void Add_Form_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

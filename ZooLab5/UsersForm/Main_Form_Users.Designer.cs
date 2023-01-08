@@ -314,6 +314,7 @@ namespace ZooLab5.UsersForm
             this.Clear_Button.Size = new System.Drawing.Size(42, 37);
             this.Clear_Button.TabIndex = 3;
             this.Clear_Button.UseVisualStyleBackColor = false;
+            this.Clear_Button.Click += new System.EventHandler(this.Clear_Button_Click);
             // 
             // Renew_Button
             // 
@@ -347,7 +348,7 @@ namespace ZooLab5.UsersForm
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(877, 592);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Вальеры";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Main_Form_Users

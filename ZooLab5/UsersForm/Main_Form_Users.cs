@@ -259,5 +259,20 @@ namespace ZooLab5.UsersForm
         {
             Update();
         }
+
+        /// <summary>
+        /// Відмінити вибірку обраних даних
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Clear_Button_Click(object sender, EventArgs e)
+        {
+            ID_textBox.Text = string.Empty;
+            Name_textBox.Text = string.Empty;
+            Family_textBox.Text = string.Empty;
+            LifePlace_textBox.Text = string.Empty;
+            LongLife_textBox.Text = string.Empty;
+            dataGridView1.CurrentCell = null;
+        }
     }
 }

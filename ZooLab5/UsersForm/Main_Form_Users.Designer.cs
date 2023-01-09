@@ -42,6 +42,10 @@ namespace ZooLab5.UsersForm
             this.Name_textBox = new System.Windows.Forms.TextBox();
             this.Family_textBox = new System.Windows.Forms.TextBox();
             this.ID_textBox = new System.Windows.Forms.TextBox();
+            this.LifePlace_textBox = new System.Windows.Forms.TextBox();
+            this.LongLife_textBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,10 +57,6 @@ namespace ZooLab5.UsersForm
             this.Renew_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.LongLife_textBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LifePlace_textBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -196,6 +196,40 @@ namespace ZooLab5.UsersForm
             this.ID_textBox.Size = new System.Drawing.Size(174, 20);
             this.ID_textBox.TabIndex = 10;
             // 
+            // LifePlace_textBox
+            // 
+            this.LifePlace_textBox.Location = new System.Drawing.Point(170, 138);
+            this.LifePlace_textBox.Name = "LifePlace_textBox";
+            this.LifePlace_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LifePlace_textBox.TabIndex = 11;
+            // 
+            // LongLife_textBox
+            // 
+            this.LongLife_textBox.Location = new System.Drawing.Point(170, 168);
+            this.LongLife_textBox.Name = "LongLife_textBox";
+            this.LongLife_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LongLife_textBox.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(83, 169);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 16);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "LongLife";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(83, 139);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "LifePlace";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -316,40 +350,6 @@ namespace ZooLab5.UsersForm
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Вальеры";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // LongLife_textBox
-            // 
-            this.LongLife_textBox.Location = new System.Drawing.Point(170, 168);
-            this.LongLife_textBox.Name = "LongLife_textBox";
-            this.LongLife_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LongLife_textBox.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(83, 169);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 16);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "LongLife";
-            // 
-            // LifePlace_textBox
-            // 
-            this.LifePlace_textBox.Location = new System.Drawing.Point(170, 138);
-            this.LifePlace_textBox.Name = "LifePlace_textBox";
-            this.LifePlace_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LifePlace_textBox.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(83, 139);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "LifePlace";
             // 
             // Main_Form_Users
             // 

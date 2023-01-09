@@ -27,10 +27,26 @@ namespace ZooLab5
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Видалення процесів закритої форми.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Main_Form_Admin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+
+        /// <summary>
+        /// Параметри завантаження форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Main_Form_Admin_Load(object sender, EventArgs e)
         {
             CreateColumns();
-            RefreshDataGrid(dataGridView1);
+            RefreshDataGridUsers(dataGridView1);
+            RefreshDataGridLook(dataGridView2);
         }
 
         /// <summary>
@@ -38,48 +54,127 @@ namespace ZooLab5
         /// </summary>
         private void CreateColumns()
         {
+            //Стовпці для таблиці users
             dataGridView1.Columns.Add("Id", "Id");
             dataGridView1.Columns.Add("Password", "Password");
             dataGridView1.Columns.Add("Login", "Login");
             dataGridView1.Columns.Add("IsNew", string.Empty);
+
+            //Стовпці для таблиці look
+            dataGridView2.Columns.Add("Id", "Id");
+            dataGridView2.Columns.Add("Name", "Name");
+            dataGridView2.Columns.Add("Family", "Family");
+            dataGridView2.Columns.Add("LifePlace", "LifePlace");
+            dataGridView2.Columns.Add("LongLife", "LongLife");
+            dataGridView2.Columns.Add("IsNew", string.Empty);
         }
 
         /// <summary>
-        /// Надання типів даних для полів.
+        /// Надання типів даних для полів таблиці Users.
         /// </summary>
         /// <param name="dgw"></param>
         /// <param name="record"></param>
-        private void ReadSingleRows(DataGridView dgw, IDataReader record)
+        private void ReadSingleRowsUsers(DataGridView dgw, IDataReader record)
         {
             dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), RowState.ModifiedNew);
         }
 
         /// <summary>
-        /// Зчитування даних з бази даних.
+        /// Надання типів даних для полів таблиці Look.
         /// </summary>
         /// <param name="dgw"></param>
-        private void RefreshDataGrid(DataGridView dgw)
+        /// <param name="record"></param>
+        private void ReadSingleRowsLook(DataGridView dgw, IDataReader record)
+        {
+            dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetInt32(4), RowState.ModifiedNew);
+        }
+
+        /// <summary>
+        /// Зчитування даних з бази даних для таблиці Users.
+        /// </summary>
+        /// <param name="dgw"></param>
+        private void RefreshDataGridUsers(DataGridView dgw)
         {
             dgw.Rows.Clear();
 
-            string queryString = $"SELECT * FROM Users";
-            SqlCommand command = new SqlCommand(queryString, DB.getConnection());
+            string queryStringUsers = $"SELECT * FROM Users";
+            SqlCommand UserCommand = new SqlCommand(queryStringUsers, DB.getConnection());
 
             DB.openConnection();
 
-            SqlDataReader reader = command.ExecuteReader();
-
-            while(reader.Read())
+            SqlDataReader UserReader = UserCommand.ExecuteReader();
+           
+            while(UserReader.Read())
             {
-                ReadSingleRows(dgw, reader);
+                ReadSingleRowsUsers(dgw, UserReader);
             }
-            reader.Close();
+
+            UserReader.Close();
             DB.closeConnection();
         }
 
-        private void Main_Form_Admin_FormClosed(object sender, FormClosedEventArgs e)
+        /// <summary>
+        /// Зчитування даних з бази даних для таблиці Look.
+        /// </summary>
+        /// <param name="dgw"></param>
+        private void RefreshDataGridLook(DataGridView dgw)
         {
-            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            dgw.Rows.Clear();
+
+            string quertStringLook = $"SELECT * FROM Look";
+            SqlCommand LookCommand = new SqlCommand(quertStringLook, DB.getConnection());
+
+            DB.openConnection();
+
+            SqlDataReader LookReader = LookCommand.ExecuteReader();
+
+            while (LookReader.Read())
+            {
+                ReadSingleRowsLook(dgw, LookReader);
+            }
+
+            LookReader.Close();
+            DB.closeConnection();
+        }
+
+        private void Save_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Change_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void New_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Find_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clear_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Renew_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

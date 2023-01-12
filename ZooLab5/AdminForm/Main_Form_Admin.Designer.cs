@@ -309,6 +309,7 @@ namespace ZooLab5
             this.Renew_Button.Size = new System.Drawing.Size(42, 37);
             this.Renew_Button.TabIndex = 2;
             this.Renew_Button.UseVisualStyleBackColor = false;
+            this.Renew_Button.Click += new System.EventHandler(this.Renew_Button_Click);
             // 
             // label1
             // 

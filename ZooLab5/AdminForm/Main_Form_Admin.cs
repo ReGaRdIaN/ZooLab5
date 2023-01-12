@@ -137,44 +137,22 @@ namespace ZooLab5
             DB.closeConnection();
         }
 
-        private void Save_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Change_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Delete_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void New_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Find_textBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Clear_Button_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Оновлення переглядаймої таблиці.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Renew_Button_Click(object sender, EventArgs e)
         {
-
+            if(tabControl1.SelectedIndex == 0)
+            {
+                RefreshDataGridUsers(dataGridView1);
+            }
+            else
+            {
+                RefreshDataGridLook(dataGridView2);
+            }
         }
+
     }
 }

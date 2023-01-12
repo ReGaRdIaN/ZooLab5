@@ -38,6 +38,11 @@ namespace ZooLab5.UsersForm
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
+        /// <summary>
+        /// Параметри завантаження форми
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Main_Form_Users_Load(object sender, EventArgs e)
         {
             CreateColumns();
@@ -164,7 +169,7 @@ namespace ZooLab5.UsersForm
 
             dataGridView1.Rows[index].Visible = false;
 
-            if (dataGridView1.Rows[index].Cells[0].Value.ToString() == string.Empty)
+            if (dataGridView1.Rows[index].Cells[0].Value.ToString() != string.Empty)
             {
                 dataGridView1.Rows[index].Cells[5].Value = RowState.Deleted;
                 return;

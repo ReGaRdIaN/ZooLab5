@@ -13,10 +13,15 @@ namespace ZooLab5.AuthoRegForms
 {
     public partial class Registration_Form : Form
     {
+        Authorization_From AuthoForm = new Authorization_From();
         DataBase DB = new DataBase();
         public Registration_Form()
         {
             InitializeComponent();
+        }
+        private void Registration_Form_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
         /// <summary>
@@ -30,7 +35,7 @@ namespace ZooLab5.AuthoRegForms
         }
 
         /// <summary>
-        /// Кнопка підтвердження регестрації
+        /// Кнопка підтвердження реєстрації
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -39,6 +44,10 @@ namespace ZooLab5.AuthoRegForms
             if(UserCheck())
             {
                 return;
+            }
+            else if(ChangeLog_textBox.Text == string.Empty || ChangePass_textBox.Text == string.Empty)
+            {
+                MessageBox.Show("Усі поля повинні бути заповнені!", "Помилка!");         
             }
             else
             {
@@ -58,7 +67,6 @@ namespace ZooLab5.AuthoRegForms
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Акаунт успішно створений", "Успіх");
-                    Authorization_From AuthoForm = new Authorization_From();
                     this.Hide();
                     AuthoForm.ShowDialog();
                 }
@@ -96,6 +104,11 @@ namespace ZooLab5.AuthoRegForms
             {
                 return false;
             }
+        }
+        private void AutoReg_Label_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AuthoForm.ShowDialog();
         }
     }
 }

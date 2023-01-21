@@ -35,6 +35,7 @@ namespace ZooLab5.AuthoRegForms
             this.ChangeLog_textBox = new System.Windows.Forms.TextBox();
             this.ChangePass_textBox = new System.Windows.Forms.TextBox();
             this.Registr_button = new System.Windows.Forms.Button();
+            this.AutoReg_Label = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Reg_label
@@ -45,7 +46,7 @@ namespace ZooLab5.AuthoRegForms
             this.Reg_label.Name = "Reg_label";
             this.Reg_label.Size = new System.Drawing.Size(366, 51);
             this.Reg_label.TabIndex = 0;
-            this.Reg_label.Text = "Регістрація";
+            this.Reg_label.Text = "Реєстрація";
             this.Reg_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ChangeLog_label
@@ -92,11 +93,24 @@ namespace ZooLab5.AuthoRegForms
             this.Registr_button.UseVisualStyleBackColor = true;
             this.Registr_button.Click += new System.EventHandler(this.Registr_button_Click);
             // 
+            // AutoReg_Label
+            // 
+            this.AutoReg_Label.AutoSize = true;
+            this.AutoReg_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AutoReg_Label.ForeColor = System.Drawing.Color.DimGray;
+            this.AutoReg_Label.Location = new System.Drawing.Point(145, 189);
+            this.AutoReg_Label.Name = "AutoReg_Label";
+            this.AutoReg_Label.Size = new System.Drawing.Size(89, 13);
+            this.AutoReg_Label.TabIndex = 7;
+            this.AutoReg_Label.Text = "Авторизуватися";
+            this.AutoReg_Label.Click += new System.EventHandler(this.AutoReg_Label_Click);
+            // 
             // Registration_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 498);
+            this.Controls.Add(this.AutoReg_Label);
             this.Controls.Add(this.Registr_button);
             this.Controls.Add(this.ChangePass_textBox);
             this.Controls.Add(this.ChangeLog_textBox);
@@ -107,6 +121,7 @@ namespace ZooLab5.AuthoRegForms
             this.Name = "Registration_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Registration_Form_FormClosed);
             this.Load += new System.EventHandler(this.Registration_Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -121,5 +136,6 @@ namespace ZooLab5.AuthoRegForms
         private System.Windows.Forms.TextBox ChangeLog_textBox;
         private System.Windows.Forms.TextBox ChangePass_textBox;
         private System.Windows.Forms.Button Registr_button;
+        private System.Windows.Forms.Label AutoReg_Label;
     }
 }

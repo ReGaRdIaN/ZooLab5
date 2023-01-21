@@ -29,10 +29,6 @@ namespace ZooLab5
         /// <param name="e"></param>
         private void Authorization_From_Load(object sender, EventArgs e)
         {
-            Authorization_Button.Location = new Point(ClientSize.Width / 2 - Authorization_Button.Width / 2, 139);
-            UserPass_textBox.PasswordChar = '*';
-            UserPass_textBox.MaxLength = 50;
-            UserPass_textBox.MaxLength = 50;
         }
         
         /// <summary>

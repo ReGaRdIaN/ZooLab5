@@ -42,6 +42,12 @@ namespace ZooLab5
             RegFrom.Show();
             this.Hide();
         }
+
+        /// <summary>
+        /// Зімна кольору переходу між формами реєстрації та авторизації
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NotReg_Label_MouseMove_1(object sender, MouseEventArgs e)
         {
             NotReg_Label.ForeColor = Color.Black;

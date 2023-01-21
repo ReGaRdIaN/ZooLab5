@@ -105,10 +105,30 @@ namespace ZooLab5.AuthoRegForms
                 return false;
             }
         }
+
+        /// <summary>
+        /// Повернення на форму авторизації.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AutoReg_Label_Click(object sender, EventArgs e)
         {
             this.Hide();
             AuthoForm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Зімна кольору переходу між формами реєстрації та авторизації.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AutoReg_Label_MouseMove(object sender, MouseEventArgs e)
+        {
+            AutoReg_Label.ForeColor = Color.Black;
+        }
+        private void AutoReg_Label_MouseLeave(object sender, EventArgs e)
+        {
+            AutoReg_Label.ForeColor = Color.DimGray;
         }
     }
 }

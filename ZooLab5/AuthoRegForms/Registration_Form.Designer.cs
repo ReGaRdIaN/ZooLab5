@@ -104,6 +104,8 @@ namespace ZooLab5.AuthoRegForms
             this.AutoReg_Label.TabIndex = 7;
             this.AutoReg_Label.Text = "Авторизуватися";
             this.AutoReg_Label.Click += new System.EventHandler(this.AutoReg_Label_Click);
+            this.AutoReg_Label.MouseLeave += new System.EventHandler(this.AutoReg_Label_MouseLeave);
+            this.AutoReg_Label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AutoReg_Label_MouseMove);
             // 
             // Registration_Form
             // 

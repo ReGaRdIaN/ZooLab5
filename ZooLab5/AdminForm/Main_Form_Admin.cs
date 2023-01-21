@@ -225,6 +225,7 @@ namespace ZooLab5
             dataGridView2.CurrentCell = null;
         }
 
+
         /// <summary>
         /// Пошук потрібних строк
         /// </summary>
@@ -276,6 +277,109 @@ namespace ZooLab5
         private void LookFind_textBox_TextChanged(object sender, EventArgs e)
         {
             Find(dataGridView2);
+        }
+
+
+        /// <summary>
+        /// Видалення даних
+        /// </summary>
+        private void DeleteRow()
+        {
+            int index;
+            if (tabControl1.SelectedIndex == 0)
+            {
+                index = dataGridView1.CurrentCell.RowIndex;
+
+                dataGridView1.Rows[index].Visible = false;
+
+                if (dataGridView1.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                {
+                    dataGridView1.Rows[index].Cells[3].Value = RowState.Deleted;
+                    return;
+                }
+            }
+            else
+            {
+                index = dataGridView2.CurrentCell.RowIndex;
+
+                dataGridView2.Rows[index].Visible = false;
+
+                if(dataGridView2.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                {
+                    dataGridView2.Rows[index].Cells[5].Value = RowState.Deleted;
+                    return;
+                }
+            }
+        }
+        private void UsersDelete_button_Click(object sender, EventArgs e)
+        {
+            DeleteRow();
+        }
+        private void LookDelete_button_Click(object sender, EventArgs e)
+        {
+            DeleteRow();
+        }
+
+        
+        /// <summary>
+        /// Збереження змін
+        /// </summary>
+        private new void Update()
+        {
+            DB.openConnection();
+
+            if(tabControl1.SelectedIndex == 0)
+            {
+                for (int UsersIndex = 0; UsersIndex < dataGridView1.Rows.Count; UsersIndex++)
+                {
+                    var UsersRowState = (RowState)dataGridView1.Rows[UsersIndex].Cells[3].Value;
+
+                    if(UsersRowState == RowState.Existed)
+                    {
+                        continue;
+                    }
+                    if(UsersRowState == RowState.Deleted)
+                    {
+                        var id = Convert.ToInt32(dataGridView1.Rows[UsersIndex].Cells[0].Value);
+
+                        var deleteQuery = $"DELETE FROM Users " +
+                                          $"WHERE UserId = {id}";
+
+                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                for (int LookIndex = 0; LookIndex < dataGridView2.Rows.Count; LookIndex++)
+                {
+                    var LookRowState = (RowState)dataGridView2.Rows[LookIndex].Cells[5].Value;
+
+                    if(LookRowState == RowState.Existed)
+                    {
+                        continue;
+                    }
+                    if(LookRowState == RowState.Deleted)
+                    {
+                        var id = Convert.ToInt32(dataGridView2.Rows[LookIndex].Cells[5].Value);
+
+                        var deleteQuery = $"DELETE FROM Look " +
+                                          $"WHERE LookId = {id}";
+
+                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+        private void UsersSave_button_Click(object sender, EventArgs e)
+        {
+            Update();
+        }
+        private void LookSave_button_Click(object sender, EventArgs e)
+        {
+            Update();
         }
     }
 }

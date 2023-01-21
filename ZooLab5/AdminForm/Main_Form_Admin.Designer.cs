@@ -33,9 +33,9 @@ namespace ZooLab5
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Save_button = new System.Windows.Forms.Button();
+            this.UsersSave_button = new System.Windows.Forms.Button();
             this.Change_button = new System.Windows.Forms.Button();
-            this.Delete_button = new System.Windows.Forms.Button();
+            this.UsersDelete_button = new System.Windows.Forms.Button();
             this.New_button = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,9 +54,9 @@ namespace ZooLab5
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LookSave_button = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.LookDelete_button = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -121,9 +121,9 @@ namespace ZooLab5
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.Save_button);
+            this.panel2.Controls.Add(this.UsersSave_button);
             this.panel2.Controls.Add(this.Change_button);
-            this.panel2.Controls.Add(this.Delete_button);
+            this.panel2.Controls.Add(this.UsersDelete_button);
             this.panel2.Controls.Add(this.New_button);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(442, 370);
@@ -131,14 +131,15 @@ namespace ZooLab5
             this.panel2.Size = new System.Drawing.Size(134, 195);
             this.panel2.TabIndex = 8;
             // 
-            // Save_button
+            // UsersSave_button
             // 
-            this.Save_button.Location = new System.Drawing.Point(24, 162);
-            this.Save_button.Name = "Save_button";
-            this.Save_button.Size = new System.Drawing.Size(75, 23);
-            this.Save_button.TabIndex = 12;
-            this.Save_button.Text = "Зберігти";
-            this.Save_button.UseVisualStyleBackColor = true;
+            this.UsersSave_button.Location = new System.Drawing.Point(24, 162);
+            this.UsersSave_button.Name = "UsersSave_button";
+            this.UsersSave_button.Size = new System.Drawing.Size(75, 23);
+            this.UsersSave_button.TabIndex = 12;
+            this.UsersSave_button.Text = "Зберігти";
+            this.UsersSave_button.UseVisualStyleBackColor = true;
+            this.UsersSave_button.Click += new System.EventHandler(this.UsersSave_button_Click);
             // 
             // Change_button
             // 
@@ -149,14 +150,15 @@ namespace ZooLab5
             this.Change_button.Text = "Змінити";
             this.Change_button.UseVisualStyleBackColor = true;
             // 
-            // Delete_button
+            // UsersDelete_button
             // 
-            this.Delete_button.Location = new System.Drawing.Point(24, 99);
-            this.Delete_button.Name = "Delete_button";
-            this.Delete_button.Size = new System.Drawing.Size(75, 23);
-            this.Delete_button.TabIndex = 10;
-            this.Delete_button.Text = "Видалити";
-            this.Delete_button.UseVisualStyleBackColor = true;
+            this.UsersDelete_button.Location = new System.Drawing.Point(24, 99);
+            this.UsersDelete_button.Name = "UsersDelete_button";
+            this.UsersDelete_button.Size = new System.Drawing.Size(75, 23);
+            this.UsersDelete_button.TabIndex = 10;
+            this.UsersDelete_button.Text = "Видалити";
+            this.UsersDelete_button.UseVisualStyleBackColor = true;
+            this.UsersDelete_button.Click += new System.EventHandler(this.UsersDelete_button_Click);
             // 
             // New_button
             // 
@@ -346,9 +348,9 @@ namespace ZooLab5
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.LookSave_button);
             this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.LookDelete_button);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Location = new System.Drawing.Point(479, 370);
@@ -356,14 +358,15 @@ namespace ZooLab5
             this.panel3.Size = new System.Drawing.Size(134, 195);
             this.panel3.TabIndex = 8;
             // 
-            // button1
+            // LookSave_button
             // 
-            this.button1.Location = new System.Drawing.Point(24, 162);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Зберігти";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LookSave_button.Location = new System.Drawing.Point(24, 162);
+            this.LookSave_button.Name = "LookSave_button";
+            this.LookSave_button.Size = new System.Drawing.Size(75, 23);
+            this.LookSave_button.TabIndex = 12;
+            this.LookSave_button.Text = "Зберігти";
+            this.LookSave_button.UseVisualStyleBackColor = true;
+            this.LookSave_button.Click += new System.EventHandler(this.LookSave_button_Click);
             // 
             // button2
             // 
@@ -374,14 +377,15 @@ namespace ZooLab5
             this.button2.Text = "Змінити";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // LookDelete_button
             // 
-            this.button3.Location = new System.Drawing.Point(24, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Видалити";
-            this.button3.UseVisualStyleBackColor = true;
+            this.LookDelete_button.Location = new System.Drawing.Point(24, 99);
+            this.LookDelete_button.Name = "LookDelete_button";
+            this.LookDelete_button.Size = new System.Drawing.Size(75, 23);
+            this.LookDelete_button.TabIndex = 10;
+            this.LookDelete_button.Text = "Видалити";
+            this.LookDelete_button.UseVisualStyleBackColor = true;
+            this.LookDelete_button.Click += new System.EventHandler(this.LookDelete_button_Click);
             // 
             // button4
             // 
@@ -623,9 +627,9 @@ namespace ZooLab5
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button Save_button;
+        private System.Windows.Forms.Button UsersSave_button;
         private System.Windows.Forms.Button Change_button;
-        private System.Windows.Forms.Button Delete_button;
+        private System.Windows.Forms.Button UsersDelete_button;
         private System.Windows.Forms.Button New_button;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
@@ -644,9 +648,9 @@ namespace ZooLab5
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LookSave_button;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button LookDelete_button;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;

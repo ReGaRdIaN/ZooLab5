@@ -225,7 +225,7 @@ namespace ZooLab5.UsersForm
 
 
         /// <summary>
-        /// Збереження
+        /// Збереження змін
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

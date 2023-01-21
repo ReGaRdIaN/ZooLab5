@@ -77,7 +77,7 @@ namespace ZooLab5
 
             if (table.Rows.Count == 1)
             {
-                MessageBox.Show("Вы успешно вошли!", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ви успішно зайшли!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (loginUser == "Admin" && passUser == "Admin" || loginUser == "admin" && passUser == "admin")
                 {
                     Main_Form_Admin MainFormAdmin = new Main_Form_Admin();
@@ -93,7 +93,7 @@ namespace ZooLab5
             }
             else
             {
-                MessageBox.Show("Такого акаунта не существует", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Такого акаунту не існує", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

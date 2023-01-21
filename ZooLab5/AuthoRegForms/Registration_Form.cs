@@ -49,22 +49,22 @@ namespace ZooLab5.AuthoRegForms
                 DataTable table = new DataTable();
 
                 string querystring = $"INSERT INTO Users(UserPass, UserLogin) " +
-                                            $"VALUES" +
-                                            $"('{passUser}', '{loginUser}')";
+                                     $"VALUES" +
+                                     $"('{passUser}', '{loginUser}')";
 
                 SqlCommand command = new SqlCommand(querystring, DB.getConnection());
                 DB.openConnection();
 
                 if (command.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Аккаунт успешно создан", "Успех");
+                    MessageBox.Show("Акаунт успішно створений", "Успіх");
                     Authorization_From AuthoForm = new Authorization_From();
                     this.Hide();
                     AuthoForm.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Аккаунт не создан!", "Ошибка");
+                    MessageBox.Show("Акаунт не створений!", "Помилка");
                 }
             }
         }
@@ -89,7 +89,7 @@ namespace ZooLab5.AuthoRegForms
 
             if(table.Rows.Count > 0)
             {
-                MessageBox.Show("Пользователь уже существует!");
+                MessageBox.Show("Такий користувач вже імнує!");
                 return true;
             }
             else

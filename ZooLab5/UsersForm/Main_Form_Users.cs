@@ -136,13 +136,15 @@ namespace ZooLab5.UsersForm
         }
 
         /// <summary>
-        /// Пошук потрібних нам строк
+        /// Пошук потрібних строк
         /// </summary>
         /// <param name="dgw"></param>
         private void Find(DataGridView dgw)
         {
             dgw.Rows.Clear();
-            string findString = $"SELECT * FROM Look WHERE CONCAT (LookId, Name, Family, LifePlace, LongLife) LIKE '%" + Find_textBox.Text + "%'";
+            string findString = $"SELECT * FROM Look " +
+                                $"WHERE CONCAT (LookId, Name, Family, LifePlace, LongLife)" +
+                                $"LIKE '%" + Find_textBox.Text + "%'";
 
             SqlCommand command = new SqlCommand(findString, DB.getConnection());
             DB.openConnection();
@@ -160,6 +162,7 @@ namespace ZooLab5.UsersForm
             Find(dataGridView1);
         }
 
+
         /// <summary>
         /// Видалення стовпця
         /// </summary>
@@ -175,7 +178,6 @@ namespace ZooLab5.UsersForm
                 return;
             }
         }
-
         /// <summary>
         /// Видалення 
         /// </summary>
@@ -185,6 +187,7 @@ namespace ZooLab5.UsersForm
         {
             DeleteRow();
         }
+
 
         /// <summary>
         /// Редагування даних 
@@ -220,6 +223,7 @@ namespace ZooLab5.UsersForm
             Change();
         }
 
+
         /// <summary>
         /// Збереження
         /// </summary>
@@ -240,7 +244,8 @@ namespace ZooLab5.UsersForm
                 if (rowState == RowState.Deleted)
                 {
                     var id = Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value);
-                    var deleteQuary = $"DELETE FROM Look WHERE LookId = {id}";
+                    var deleteQuary = $"DELETE FROM Look " +
+                                      $"WHERE LookId = {id}";
 
                     var command = new SqlCommand(deleteQuary, DB.getConnection());
                     command.ExecuteNonQuery();
@@ -253,7 +258,9 @@ namespace ZooLab5.UsersForm
                     var lifeplace = dataGridView1.Rows[index].Cells[3].Value.ToString();
                     var longlife = dataGridView1.Rows[index].Cells[4].Value.ToString();
 
-                    var chaneQuary = $"UPDATE Look SET Name = '{name}', Family = '{family}', LifePlace = '{lifeplace}', LongLife = '{longlife}' WHERE LookId = '{id}'";
+                    var chaneQuary = $"UPDATE Look " +
+                                     $"SET Name = '{name}', Family = '{family}', LifePlace = '{lifeplace}', LongLife = '{longlife}' " +
+                                     $"WHERE LookId = '{id}'";
                     var command = new SqlCommand(chaneQuary, DB.getConnection());
                     command.ExecuteNonQuery();
                 }
@@ -264,6 +271,7 @@ namespace ZooLab5.UsersForm
         {
             Update();
         }
+
 
         /// <summary>
         /// Відмінити вибірку обраних даних

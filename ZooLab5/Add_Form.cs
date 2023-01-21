@@ -40,13 +40,13 @@ namespace ZooLab5
             if(int.TryParse(AddLongLife_textBox.Text, out longlife))
             {
                 string AddQuery = $"INSERT INTO Look (Name, Family, LifePlace, LongLife)" +
-                                                $"VALUES" +
-                                                $"('{name}', '{family}', '{lifeplace}', '{longlife}')";
+                                  $"VALUES" +
+                                  $"('{name}', '{family}', '{lifeplace}', '{longlife}')";
 
                 SqlCommand command = new SqlCommand(AddQuery, DB.getConnection());
                 command.ExecuteNonQuery();
 
-                MessageBox.Show("Запись добавлена", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Запис доданий", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 AddName_textBox.Text = "";
                 AddFamily_textBox.Text = "";
                 AddLifePlace_textBox.Text = "";
@@ -54,7 +54,7 @@ namespace ZooLab5
             }
             else
             {
-                MessageBox.Show("Значение LongLife должно быть целочисленным!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Значення LongLife повинно бути цілим!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             DB.closeConnection();

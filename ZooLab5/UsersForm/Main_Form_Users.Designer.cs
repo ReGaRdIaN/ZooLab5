@@ -101,7 +101,7 @@ namespace ZooLab5.UsersForm
             this.panel2.Controls.Add(this.Delete_button);
             this.panel2.Controls.Add(this.New_button);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(479, 370);
+            this.panel2.Location = new System.Drawing.Point(442, 370);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(134, 195);
             this.panel2.TabIndex = 8;

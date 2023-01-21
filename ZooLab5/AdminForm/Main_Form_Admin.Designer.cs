@@ -39,17 +39,17 @@ namespace ZooLab5
             this.New_button = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Name_textBox = new System.Windows.Forms.TextBox();
-            this.Family_textBox = new System.Windows.Forms.TextBox();
+            this.Login_textBox = new System.Windows.Forms.TextBox();
+            this.Pass_textBox = new System.Windows.Forms.TextBox();
             this.ID_textBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Find_textBox = new System.Windows.Forms.TextBox();
+            this.UsersFind_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Clear_Button = new System.Windows.Forms.Button();
+            this.UsersClear_Button = new System.Windows.Forms.Button();
             this.Renew_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -60,11 +60,11 @@ namespace ZooLab5
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.LifePlace_textBox = new System.Windows.Forms.TextBox();
-            this.LongLife_textBox = new System.Windows.Forms.TextBox();
+            this.LookName_textBox = new System.Windows.Forms.TextBox();
+            this.LookFamily_textBox = new System.Windows.Forms.TextBox();
+            this.LookId_textBox = new System.Windows.Forms.TextBox();
+            this.LookLifePlace_textBox = new System.Windows.Forms.TextBox();
+            this.LookLongLife_textBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -72,9 +72,9 @@ namespace ZooLab5
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.LookFind_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.LookClear_button = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -105,9 +105,9 @@ namespace ZooLab5
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.Find_textBox);
+            this.tabPage1.Controls.Add(this.UsersFind_textBox);
             this.tabPage1.Controls.Add(this.pictureBox1);
-            this.tabPage1.Controls.Add(this.Clear_Button);
+            this.tabPage1.Controls.Add(this.UsersClear_Button);
             this.tabPage1.Controls.Add(this.Renew_Button);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -126,7 +126,7 @@ namespace ZooLab5
             this.panel2.Controls.Add(this.Delete_button);
             this.panel2.Controls.Add(this.New_button);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(479, 370);
+            this.panel2.Location = new System.Drawing.Point(442, 370);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(134, 195);
             this.panel2.TabIndex = 8;
@@ -180,8 +180,8 @@ namespace ZooLab5
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.Name_textBox);
-            this.panel1.Controls.Add(this.Family_textBox);
+            this.panel1.Controls.Add(this.Login_textBox);
+            this.panel1.Controls.Add(this.Pass_textBox);
             this.panel1.Controls.Add(this.ID_textBox);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -192,19 +192,19 @@ namespace ZooLab5
             this.panel1.Size = new System.Drawing.Size(416, 195);
             this.panel1.TabIndex = 7;
             // 
-            // Name_textBox
+            // Login_textBox
             // 
-            this.Name_textBox.Location = new System.Drawing.Point(168, 99);
-            this.Name_textBox.Name = "Name_textBox";
-            this.Name_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Name_textBox.TabIndex = 8;
+            this.Login_textBox.Location = new System.Drawing.Point(168, 99);
+            this.Login_textBox.Name = "Login_textBox";
+            this.Login_textBox.Size = new System.Drawing.Size(174, 20);
+            this.Login_textBox.TabIndex = 8;
             // 
-            // Family_textBox
+            // Pass_textBox
             // 
-            this.Family_textBox.Location = new System.Drawing.Point(168, 132);
-            this.Family_textBox.Name = "Family_textBox";
-            this.Family_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Family_textBox.TabIndex = 9;
+            this.Pass_textBox.Location = new System.Drawing.Point(168, 132);
+            this.Pass_textBox.Name = "Pass_textBox";
+            this.Pass_textBox.Size = new System.Drawing.Size(174, 20);
+            this.Pass_textBox.TabIndex = 9;
             // 
             // ID_textBox
             // 
@@ -263,14 +263,16 @@ namespace ZooLab5
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(862, 282);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // Find_textBox
+            // UsersFind_textBox
             // 
-            this.Find_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Find_textBox.Location = new System.Drawing.Point(715, 14);
-            this.Find_textBox.Name = "Find_textBox";
-            this.Find_textBox.Size = new System.Drawing.Size(155, 29);
-            this.Find_textBox.TabIndex = 5;
+            this.UsersFind_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UsersFind_textBox.Location = new System.Drawing.Point(715, 14);
+            this.UsersFind_textBox.Name = "UsersFind_textBox";
+            this.UsersFind_textBox.Size = new System.Drawing.Size(155, 29);
+            this.UsersFind_textBox.TabIndex = 5;
+            this.UsersFind_textBox.TextChanged += new System.EventHandler(this.UsersFind_textBox_TextChanged);
             // 
             // pictureBox1
             // 
@@ -283,18 +285,19 @@ namespace ZooLab5
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // Clear_Button
+            // UsersClear_Button
             // 
-            this.Clear_Button.BackColor = System.Drawing.Color.DarkGray;
-            this.Clear_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Clear_Button.BackgroundImage")));
-            this.Clear_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Clear_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Clear_Button.ForeColor = System.Drawing.Color.DarkGray;
-            this.Clear_Button.Location = new System.Drawing.Point(571, 10);
-            this.Clear_Button.Name = "Clear_Button";
-            this.Clear_Button.Size = new System.Drawing.Size(42, 37);
-            this.Clear_Button.TabIndex = 3;
-            this.Clear_Button.UseVisualStyleBackColor = false;
+            this.UsersClear_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.UsersClear_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UsersClear_Button.BackgroundImage")));
+            this.UsersClear_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UsersClear_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UsersClear_Button.ForeColor = System.Drawing.Color.DarkGray;
+            this.UsersClear_Button.Location = new System.Drawing.Point(571, 10);
+            this.UsersClear_Button.Name = "UsersClear_Button";
+            this.UsersClear_Button.Size = new System.Drawing.Size(42, 37);
+            this.UsersClear_Button.TabIndex = 3;
+            this.UsersClear_Button.UseVisualStyleBackColor = false;
+            this.UsersClear_Button.Click += new System.EventHandler(this.Clear_Button_Click);
             // 
             // Renew_Button
             // 
@@ -327,9 +330,9 @@ namespace ZooLab5
             this.tabPage2.Controls.Add(this.panel3);
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.LookFind_textBox);
             this.tabPage2.Controls.Add(this.pictureBox2);
-            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.LookClear_button);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -402,11 +405,11 @@ namespace ZooLab5
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.LifePlace_textBox);
-            this.panel4.Controls.Add(this.LongLife_textBox);
+            this.panel4.Controls.Add(this.LookName_textBox);
+            this.panel4.Controls.Add(this.LookFamily_textBox);
+            this.panel4.Controls.Add(this.LookId_textBox);
+            this.panel4.Controls.Add(this.LookLifePlace_textBox);
+            this.panel4.Controls.Add(this.LookLongLife_textBox);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label10);
@@ -418,40 +421,40 @@ namespace ZooLab5
             this.panel4.Size = new System.Drawing.Size(416, 195);
             this.panel4.TabIndex = 7;
             // 
-            // textBox1
+            // LookName_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(170, 73);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(174, 20);
-            this.textBox1.TabIndex = 8;
+            this.LookName_textBox.Location = new System.Drawing.Point(170, 73);
+            this.LookName_textBox.Name = "LookName_textBox";
+            this.LookName_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LookName_textBox.TabIndex = 8;
             // 
-            // textBox2
+            // LookFamily_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(170, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(174, 20);
-            this.textBox2.TabIndex = 9;
+            this.LookFamily_textBox.Location = new System.Drawing.Point(170, 106);
+            this.LookFamily_textBox.Name = "LookFamily_textBox";
+            this.LookFamily_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LookFamily_textBox.TabIndex = 9;
             // 
-            // textBox3
+            // LookId_textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(170, 38);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(174, 20);
-            this.textBox3.TabIndex = 10;
+            this.LookId_textBox.Location = new System.Drawing.Point(170, 38);
+            this.LookId_textBox.Name = "LookId_textBox";
+            this.LookId_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LookId_textBox.TabIndex = 10;
             // 
-            // LifePlace_textBox
+            // LookLifePlace_textBox
             // 
-            this.LifePlace_textBox.Location = new System.Drawing.Point(170, 138);
-            this.LifePlace_textBox.Name = "LifePlace_textBox";
-            this.LifePlace_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LifePlace_textBox.TabIndex = 11;
+            this.LookLifePlace_textBox.Location = new System.Drawing.Point(170, 138);
+            this.LookLifePlace_textBox.Name = "LookLifePlace_textBox";
+            this.LookLifePlace_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LookLifePlace_textBox.TabIndex = 11;
             // 
-            // LongLife_textBox
+            // LookLongLife_textBox
             // 
-            this.LongLife_textBox.Location = new System.Drawing.Point(170, 168);
-            this.LongLife_textBox.Name = "LongLife_textBox";
-            this.LongLife_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LongLife_textBox.TabIndex = 12;
+            this.LookLongLife_textBox.Location = new System.Drawing.Point(170, 168);
+            this.LookLongLife_textBox.Name = "LookLongLife_textBox";
+            this.LookLongLife_textBox.Size = new System.Drawing.Size(174, 20);
+            this.LookLongLife_textBox.TabIndex = 12;
             // 
             // label7
             // 
@@ -523,14 +526,16 @@ namespace ZooLab5
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(862, 282);
             this.dataGridView2.TabIndex = 6;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
-            // textBox4
+            // LookFind_textBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(715, 14);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 29);
-            this.textBox4.TabIndex = 5;
+            this.LookFind_textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LookFind_textBox.Location = new System.Drawing.Point(715, 14);
+            this.LookFind_textBox.Name = "LookFind_textBox";
+            this.LookFind_textBox.Size = new System.Drawing.Size(155, 29);
+            this.LookFind_textBox.TabIndex = 5;
+            this.LookFind_textBox.TextChanged += new System.EventHandler(this.LookFind_textBox_TextChanged);
             // 
             // pictureBox2
             // 
@@ -543,18 +548,19 @@ namespace ZooLab5
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // button5
+            // LookClear_button
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkGray;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.DarkGray;
-            this.button5.Location = new System.Drawing.Point(571, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(42, 37);
-            this.button5.TabIndex = 3;
-            this.button5.UseVisualStyleBackColor = false;
+            this.LookClear_button.BackColor = System.Drawing.Color.DarkGray;
+            this.LookClear_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LookClear_button.BackgroundImage")));
+            this.LookClear_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LookClear_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LookClear_button.ForeColor = System.Drawing.Color.DarkGray;
+            this.LookClear_button.Location = new System.Drawing.Point(571, 10);
+            this.LookClear_button.Name = "LookClear_button";
+            this.LookClear_button.Size = new System.Drawing.Size(42, 37);
+            this.LookClear_button.TabIndex = 3;
+            this.LookClear_button.UseVisualStyleBackColor = false;
+            this.LookClear_button.Click += new System.EventHandler(this.LookClear_button_Click);
             // 
             // button6
             // 
@@ -623,17 +629,17 @@ namespace ZooLab5
         private System.Windows.Forms.Button New_button;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox Name_textBox;
-        private System.Windows.Forms.TextBox Family_textBox;
+        private System.Windows.Forms.TextBox Login_textBox;
+        private System.Windows.Forms.TextBox Pass_textBox;
         private System.Windows.Forms.TextBox ID_textBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox Find_textBox;
+        private System.Windows.Forms.TextBox UsersFind_textBox;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Clear_Button;
+        private System.Windows.Forms.Button UsersClear_Button;
         private System.Windows.Forms.Button Renew_Button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -644,11 +650,11 @@ namespace ZooLab5
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox LifePlace_textBox;
-        private System.Windows.Forms.TextBox LongLife_textBox;
+        private System.Windows.Forms.TextBox LookName_textBox;
+        private System.Windows.Forms.TextBox LookFamily_textBox;
+        private System.Windows.Forms.TextBox LookId_textBox;
+        private System.Windows.Forms.TextBox LookLifePlace_textBox;
+        private System.Windows.Forms.TextBox LookLongLife_textBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -656,9 +662,9 @@ namespace ZooLab5
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox LookFind_textBox;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button LookClear_button;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label14;
     }

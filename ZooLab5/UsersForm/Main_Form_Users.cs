@@ -92,6 +92,7 @@ namespace ZooLab5.UsersForm
                 ReadSingleRows(dgw, reader);
             }
             reader.Close();
+            Clear();
         }
 
         /// <summary>
@@ -224,6 +225,7 @@ namespace ZooLab5.UsersForm
         }
 
 
+
         /// <summary>
         /// Збереження змін
         /// </summary>
@@ -266,6 +268,7 @@ namespace ZooLab5.UsersForm
                 }
             }
             DB.closeConnection();
+            Clear();
         }
         private void Save_button_Click(object sender, EventArgs e)
         {
@@ -278,14 +281,21 @@ namespace ZooLab5.UsersForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private void Clear()
+        {
+            if(tabControl1.SelectedIndex == 0)
+            {
+                ID_textBox.Text = string.Empty;
+                Name_textBox.Text = string.Empty;
+                Family_textBox.Text = string.Empty;
+                LifePlace_textBox.Text = string.Empty;
+                LongLife_textBox.Text = string.Empty;
+                dataGridView1.CurrentCell = null;
+            }
+        }
         private void Clear_Button_Click(object sender, EventArgs e)
         {
-            ID_textBox.Text = string.Empty;
-            Name_textBox.Text = string.Empty;
-            Family_textBox.Text = string.Empty;
-            LifePlace_textBox.Text = string.Empty;
-            LongLife_textBox.Text = string.Empty;
-            dataGridView1.CurrentCell = null;
+            Clear();
         }
     }
 }

@@ -114,6 +114,7 @@ namespace ZooLab5
 
             UserReader.Close();
             DB.closeConnection();
+            Clear();
         }
         /// <summary>
         /// Зчитування даних з бази даних для таблиці Look.
@@ -203,12 +204,28 @@ namespace ZooLab5
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        private void Clear()
+        {
+            if(tabControl1.SelectedIndex == 0)
+            {
+                ID_textBox.Text = string.Empty;
+                Login_textBox.Text = string.Empty;
+                Pass_textBox.Text = string.Empty;
+                dataGridView1.CurrentCell = null;
+            }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                LookId_textBox.Text = string.Empty;
+                LookName_textBox.Text = string.Empty;
+                LookFamily_textBox.Text = string.Empty;
+                LookLifePlace_textBox.Text = string.Empty;
+                LookLongLife_textBox.Text = string.Empty;
+                dataGridView2.CurrentCell = null;
+            }
+        }
         private void Clear_Button_Click(object sender, EventArgs e)
         {
-            ID_textBox.Text = string.Empty;
-            Login_textBox.Text = string.Empty;
-            Pass_textBox.Text = string.Empty;
-            dataGridView1.CurrentCell = null;
+            Clear();
         }
         /// <summary>
         /// Відмінити вибірку обраних даних табилці Look
@@ -217,12 +234,7 @@ namespace ZooLab5
         /// <param name="e"></param>
         private void LookClear_button_Click(object sender, EventArgs e)
         {
-            LookId_textBox.Text = string.Empty;
-            LookName_textBox.Text = string.Empty;
-            LookFamily_textBox.Text = string.Empty;
-            LookLifePlace_textBox.Text = string.Empty;
-            LookLongLife_textBox.Text = string.Empty;
-            dataGridView2.CurrentCell = null;
+            Clear();
         }
 
 
@@ -348,6 +360,18 @@ namespace ZooLab5
                         SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
                         command.ExecuteNonQuery();
                     }
+                    if(UsersRowState == RowState.Modified)
+                    {
+                        var id = Convert.ToInt32(dataGridView1.Rows[UsersIndex].Cells[0].Value);
+                        var password = dataGridView1.Rows[UsersIndex].Cells[1].Value.ToString();
+                        var login = dataGridView1.Rows[UsersIndex].Cells[2].Value.ToString();
+
+                        var modifiedQuery = $"UPDATE Users " +
+                                            $"SET UserPass = '{password}', UserLogin = '{login}'" +
+                                            $"WHERE UserId = {id}";
+                        SqlCommand command = new SqlCommand(modifiedQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
             else if(tabControl1.SelectedIndex == 1)
@@ -370,16 +394,83 @@ namespace ZooLab5
                         SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
                         command.ExecuteNonQuery();
                     }
+                    if(LookRowState == RowState.Modified)
+                    {
+                        var id = Convert.ToInt32(dataGridView2.Rows[LookIndex].Cells[0].Value);
+                        var name = dataGridView2.Rows[LookIndex].Cells[1].Value.ToString();
+                        var family = dataGridView2.Rows[LookIndex].Cells[2].Value.ToString();
+                        var lifeplace = dataGridView2.Rows[LookIndex].Cells[3].Value.ToString();
+                        var longlife = dataGridView2.Rows[LookIndex].Cells[4].Value.ToString();
+
+                        var modifiedQuery = $"UPDATE Look" +
+                                            $"SET Name = '{name}', Family = '{family}', LifePlace = '{lifeplace}', LongLife = '{longlife}'" +
+                                            $"WHERE LookId = {id}";
+
+                        SqlCommand command = new SqlCommand(modifiedQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
+            Clear();
+            DB.closeConnection();
         }
         private void UsersSave_button_Click(object sender, EventArgs e)
         {
             Update();
+            
         }
         private void LookSave_button_Click(object sender, EventArgs e)
         {
             Update();
+        }
+        
+
+
+        private void Change()
+        {
+            int index;
+            if (tabControl1.SelectedIndex == 0)
+            {
+                var id = ID_textBox.Text;
+                var login = Login_textBox.Text;
+                var password = Pass_textBox.Text;
+
+                index = dataGridView1.CurrentCell.RowIndex;
+
+                if (dataGridView1.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                {
+                    dataGridView1.Rows[index].SetValues(id, login, password);
+                    dataGridView1.Rows[index].Cells[3].Value = RowState.Modified;
+                }
+            }
+            else if(tabControl1.SelectedIndex == 1)
+            {
+                var id = LookId_textBox.Text;
+                var name = LookName_textBox.Text;
+                var family = LookFamily_textBox.Text;
+                var lifeplace = LookLifePlace_textBox.Text;
+
+                int longlife;
+
+                index = dataGridView2.CurrentCell.RowIndex;
+
+                if (dataGridView2.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                {
+                    if(int.TryParse(LookLongLife_textBox.Text, out longlife))
+                    {
+                        dataGridView2.Rows[index].SetValues(id, name, family, lifeplace);
+                        dataGridView2.Rows[index].Cells[5].Value = RowState.Modified;
+                    }
+                }
+            }
+        }
+        private void UsersChange_button_Click(object sender, EventArgs e)
+        {
+            Change();
+        }
+        private void LookChange_button_Click(object sender, EventArgs e)
+        {
+            Change();
         }
     }
 }

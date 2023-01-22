@@ -80,6 +80,7 @@ namespace ZooLab5
             // 
             this.UserPass_textBox.Location = new System.Drawing.Point(107, 108);
             this.UserPass_textBox.Name = "UserPass_textBox";
+            this.UserPass_textBox.PasswordChar = '*';
             this.UserPass_textBox.Size = new System.Drawing.Size(160, 20);
             this.UserPass_textBox.TabIndex = 4;
             // 

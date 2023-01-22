@@ -29,6 +29,7 @@ namespace ZooLab5
         /// <param name="e"></param>
         private void Authorization_From_Load(object sender, EventArgs e)
         {
+            
         }
         
         /// <summary>

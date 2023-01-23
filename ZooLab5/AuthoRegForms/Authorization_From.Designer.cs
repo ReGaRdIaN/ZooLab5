@@ -37,7 +37,8 @@ namespace ZooLab5
             this.UserPass_textBox = new System.Windows.Forms.TextBox();
             this.Authorization_Button = new System.Windows.Forms.Button();
             this.NotReg_Label = new System.Windows.Forms.Label();
-            this.ShowOrHidPass_button = new System.Windows.Forms.Button();
+            this.Show_button = new System.Windows.Forms.Button();
+            this.Hide_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelAuthorization
@@ -110,26 +111,42 @@ namespace ZooLab5
             this.NotReg_Label.MouseLeave += new System.EventHandler(this.NotReg_Label_MouseLeave_1);
             this.NotReg_Label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NotReg_Label_MouseMove_1);
             // 
-            // ShowOrHidPass_button
+            // Show_button
             // 
-            this.ShowOrHidPass_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ShowOrHidPass_button.BackgroundImage")));
-            this.ShowOrHidPass_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ShowOrHidPass_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ShowOrHidPass_button.FlatAppearance.BorderSize = 0;
-            this.ShowOrHidPass_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowOrHidPass_button.Location = new System.Drawing.Point(273, 101);
-            this.ShowOrHidPass_button.Name = "ShowOrHidPass_button";
-            this.ShowOrHidPass_button.Size = new System.Drawing.Size(56, 33);
-            this.ShowOrHidPass_button.TabIndex = 7;
-            this.ShowOrHidPass_button.UseVisualStyleBackColor = true;
-            this.ShowOrHidPass_button.Click += new System.EventHandler(this.ShowOrHidPass_button_Click);
+            this.Show_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Show_button.BackgroundImage")));
+            this.Show_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Show_button.FlatAppearance.BorderSize = 0;
+            this.Show_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_button.Location = new System.Drawing.Point(273, 101);
+            this.Show_button.Name = "Show_button";
+            this.Show_button.Size = new System.Drawing.Size(56, 33);
+            this.Show_button.TabIndex = 7;
+            this.Show_button.UseVisualStyleBackColor = true;
+            this.Show_button.Click += new System.EventHandler(this.Show_button_Click);
+            // 
+            // Hide_button
+            // 
+            this.Hide_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Hide_button.BackgroundImage")));
+            this.Hide_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Hide_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Hide_button.FlatAppearance.BorderSize = 0;
+            this.Hide_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Hide_button.Location = new System.Drawing.Point(273, 103);
+            this.Hide_button.Name = "Hide_button";
+            this.Hide_button.Size = new System.Drawing.Size(56, 31);
+            this.Hide_button.TabIndex = 8;
+            this.Hide_button.UseVisualStyleBackColor = true;
+            this.Hide_button.Visible = false;
+            this.Hide_button.Click += new System.EventHandler(this.Hide_button_Click);
             // 
             // Authorization_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 494);
-            this.Controls.Add(this.ShowOrHidPass_button);
+            this.Controls.Add(this.Hide_button);
+            this.Controls.Add(this.Show_button);
             this.Controls.Add(this.NotReg_Label);
             this.Controls.Add(this.Authorization_Button);
             this.Controls.Add(this.UserPass_textBox);
@@ -157,7 +174,8 @@ namespace ZooLab5
         private System.Windows.Forms.TextBox UserPass_textBox;
         private System.Windows.Forms.Button Authorization_Button;
         private System.Windows.Forms.Label NotReg_Label;
-        private System.Windows.Forms.Button ShowOrHidPass_button;
+        private System.Windows.Forms.Button Show_button;
+        private System.Windows.Forms.Button Hide_button;
     }
 }
 

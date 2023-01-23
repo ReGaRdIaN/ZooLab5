@@ -29,6 +29,7 @@ namespace ZooLab5.AuthoRegForms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration_Form));
             this.Reg_label = new System.Windows.Forms.Label();
             this.ChangeLog_label = new System.Windows.Forms.Label();
             this.ChangePass_label = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@ namespace ZooLab5.AuthoRegForms
             this.ChangePass_textBox = new System.Windows.Forms.TextBox();
             this.Registr_button = new System.Windows.Forms.Button();
             this.AutoReg_Label = new System.Windows.Forms.Label();
+            this.Hide_button = new System.Windows.Forms.Button();
+            this.Show_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Reg_label
@@ -73,15 +76,16 @@ namespace ZooLab5.AuthoRegForms
             // 
             this.ChangeLog_textBox.Location = new System.Drawing.Point(168, 83);
             this.ChangeLog_textBox.Name = "ChangeLog_textBox";
-            this.ChangeLog_textBox.Size = new System.Drawing.Size(154, 20);
+            this.ChangeLog_textBox.Size = new System.Drawing.Size(141, 20);
             this.ChangeLog_textBox.TabIndex = 3;
             // 
             // ChangePass_textBox
             // 
             this.ChangePass_textBox.Location = new System.Drawing.Point(168, 124);
             this.ChangePass_textBox.Name = "ChangePass_textBox";
-            this.ChangePass_textBox.Size = new System.Drawing.Size(154, 20);
+            this.ChangePass_textBox.Size = new System.Drawing.Size(141, 20);
             this.ChangePass_textBox.TabIndex = 4;
+            this.ChangePass_textBox.UseSystemPasswordChar = true;
             // 
             // Registr_button
             // 
@@ -107,11 +111,42 @@ namespace ZooLab5.AuthoRegForms
             this.AutoReg_Label.MouseLeave += new System.EventHandler(this.AutoReg_Label_MouseLeave);
             this.AutoReg_Label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AutoReg_Label_MouseMove);
             // 
+            // Hide_button
+            // 
+            this.Hide_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Hide_button.BackgroundImage")));
+            this.Hide_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Hide_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Hide_button.FlatAppearance.BorderSize = 0;
+            this.Hide_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Hide_button.Location = new System.Drawing.Point(310, 119);
+            this.Hide_button.Name = "Hide_button";
+            this.Hide_button.Size = new System.Drawing.Size(56, 31);
+            this.Hide_button.TabIndex = 10;
+            this.Hide_button.UseVisualStyleBackColor = true;
+            this.Hide_button.Visible = false;
+            this.Hide_button.Click += new System.EventHandler(this.Hide_button_Click);
+            // 
+            // Show_button
+            // 
+            this.Show_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Show_button.BackgroundImage")));
+            this.Show_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Show_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Show_button.FlatAppearance.BorderSize = 0;
+            this.Show_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_button.Location = new System.Drawing.Point(310, 117);
+            this.Show_button.Name = "Show_button";
+            this.Show_button.Size = new System.Drawing.Size(56, 33);
+            this.Show_button.TabIndex = 9;
+            this.Show_button.UseVisualStyleBackColor = true;
+            this.Show_button.Click += new System.EventHandler(this.Show_button_Click);
+            // 
             // Registration_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 498);
+            this.Controls.Add(this.Hide_button);
+            this.Controls.Add(this.Show_button);
             this.Controls.Add(this.AutoReg_Label);
             this.Controls.Add(this.Registr_button);
             this.Controls.Add(this.ChangePass_textBox);
@@ -139,5 +174,7 @@ namespace ZooLab5.AuthoRegForms
         private System.Windows.Forms.TextBox ChangePass_textBox;
         private System.Windows.Forms.Button Registr_button;
         private System.Windows.Forms.Label AutoReg_Label;
+        private System.Windows.Forms.Button Hide_button;
+        private System.Windows.Forms.Button Show_button;
     }
 }

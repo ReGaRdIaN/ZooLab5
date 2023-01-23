@@ -110,16 +110,35 @@ namespace ZooLab5
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
-        private void ShowOrHidPass_button_Click(object sender, EventArgs e)
+
+
+        /// <summary>
+        /// Відображання/скриття паролю
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ShowOrHide()
         {
-            if(UserPass_textBox.UseSystemPasswordChar == false)
+            if (UserPass_textBox.UseSystemPasswordChar == true)
             {
-                UserPass_textBox.UseSystemPasswordChar = true;
+                UserPass_textBox.UseSystemPasswordChar = false;
+                Hide_button.Visible = true;
+                Show_button.Visible = false;
             }
             else
             {
-                UserPass_textBox.UseSystemPasswordChar = false;
+                UserPass_textBox.UseSystemPasswordChar = true;
+                Hide_button.Visible = false;
+                Show_button.Visible = true;
             }
+        }
+        private void Show_button_Click(object sender, EventArgs e)
+        {
+            ShowOrHide();
+        }
+        private void Hide_button_Click(object sender, EventArgs e)
+        {
+            ShowOrHide();
         }
     }
 }

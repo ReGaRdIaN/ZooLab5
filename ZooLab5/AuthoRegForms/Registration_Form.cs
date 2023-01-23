@@ -31,7 +31,6 @@ namespace ZooLab5.AuthoRegForms
         /// <param name="e"></param>
         private void Registration_Form_Load(object sender, EventArgs e)
         {
-            ChangePass_textBox.PasswordChar = '*';
         }
 
         /// <summary>
@@ -129,6 +128,34 @@ namespace ZooLab5.AuthoRegForms
         private void AutoReg_Label_MouseLeave(object sender, EventArgs e)
         {
             AutoReg_Label.ForeColor = Color.DimGray;
+        }
+
+
+        /// <summary>
+        /// Відображання/скриття паролю
+        /// </summary>
+        private void ShowOrHide()
+        {
+            if (ChangePass_textBox.UseSystemPasswordChar == true)
+            {
+                ChangePass_textBox.UseSystemPasswordChar = false;
+                Hide_button.Visible = true;
+                Show_button.Visible = false;
+            }
+            else
+            {
+                ChangePass_textBox.UseSystemPasswordChar = true;
+                Hide_button.Visible = false;
+                Show_button.Visible = true;
+            }
+        }
+        private void Hide_button_Click(object sender, EventArgs e)
+        {
+            ShowOrHide();
+        }
+        private void Show_button_Click(object sender, EventArgs e)
+        {
+            ShowOrHide();
         }
     }
 }

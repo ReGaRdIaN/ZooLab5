@@ -29,6 +29,7 @@ namespace ZooLab5
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authorization_From));
             this.LabelAuthorization = new System.Windows.Forms.Label();
             this.LoginLabel = new System.Windows.Forms.Label();
             this.PassLabel = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@ namespace ZooLab5
             this.UserPass_textBox = new System.Windows.Forms.TextBox();
             this.Authorization_Button = new System.Windows.Forms.Button();
             this.NotReg_Label = new System.Windows.Forms.Label();
+            this.ShowOrHidPass_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelAuthorization
@@ -80,9 +82,9 @@ namespace ZooLab5
             // 
             this.UserPass_textBox.Location = new System.Drawing.Point(107, 108);
             this.UserPass_textBox.Name = "UserPass_textBox";
-            this.UserPass_textBox.PasswordChar = '*';
             this.UserPass_textBox.Size = new System.Drawing.Size(160, 20);
             this.UserPass_textBox.TabIndex = 4;
+            this.UserPass_textBox.UseSystemPasswordChar = true;
             // 
             // Authorization_Button
             // 
@@ -108,11 +110,26 @@ namespace ZooLab5
             this.NotReg_Label.MouseLeave += new System.EventHandler(this.NotReg_Label_MouseLeave_1);
             this.NotReg_Label.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NotReg_Label_MouseMove_1);
             // 
+            // ShowOrHidPass_button
+            // 
+            this.ShowOrHidPass_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ShowOrHidPass_button.BackgroundImage")));
+            this.ShowOrHidPass_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ShowOrHidPass_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ShowOrHidPass_button.FlatAppearance.BorderSize = 0;
+            this.ShowOrHidPass_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowOrHidPass_button.Location = new System.Drawing.Point(273, 101);
+            this.ShowOrHidPass_button.Name = "ShowOrHidPass_button";
+            this.ShowOrHidPass_button.Size = new System.Drawing.Size(56, 33);
+            this.ShowOrHidPass_button.TabIndex = 7;
+            this.ShowOrHidPass_button.UseVisualStyleBackColor = true;
+            this.ShowOrHidPass_button.Click += new System.EventHandler(this.ShowOrHidPass_button_Click);
+            // 
             // Authorization_From
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 494);
+            this.Controls.Add(this.ShowOrHidPass_button);
             this.Controls.Add(this.NotReg_Label);
             this.Controls.Add(this.Authorization_Button);
             this.Controls.Add(this.UserPass_textBox);
@@ -140,6 +157,7 @@ namespace ZooLab5
         private System.Windows.Forms.TextBox UserPass_textBox;
         private System.Windows.Forms.Button Authorization_Button;
         private System.Windows.Forms.Label NotReg_Label;
+        private System.Windows.Forms.Button ShowOrHidPass_button;
     }
 }
 

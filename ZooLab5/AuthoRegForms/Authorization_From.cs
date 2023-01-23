@@ -110,6 +110,16 @@ namespace ZooLab5
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
 
-        
+        private void ShowOrHidPass_button_Click(object sender, EventArgs e)
+        {
+            if(UserPass_textBox.UseSystemPasswordChar == false)
+            {
+                UserPass_textBox.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                UserPass_textBox.UseSystemPasswordChar = false;
+            }
+        }
     }
 }

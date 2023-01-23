@@ -138,6 +138,7 @@ namespace ZooLab5
 
             LookReader.Close();
             DB.closeConnection();
+            Clear();
         }
 
 
@@ -146,16 +147,24 @@ namespace ZooLab5
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Renew_Button_Click(object sender, EventArgs e)
+        private void Renew()
         {
-            if(tabControl1.SelectedIndex == 0)
+            if (tabControl1.SelectedIndex == 0)
             {
                 RefreshDataGridUsers(dataGridView1);
             }
-            else
+            else if (tabControl1.SelectedIndex == 1)
             {
                 RefreshDataGridLook(dataGridView2);
             }
+        }
+        private void UsersRenew_Button_Click(object sender, EventArgs e)
+        {
+            Renew();
+        }
+        private void LookRenew_button_Click(object sender, EventArgs e)
+        {
+            Renew();
         }
 
 
@@ -402,7 +411,7 @@ namespace ZooLab5
                         var lifeplace = dataGridView2.Rows[LookIndex].Cells[3].Value.ToString();
                         var longlife = dataGridView2.Rows[LookIndex].Cells[4].Value.ToString();
 
-                        var modifiedQuery = $"UPDATE Look" +
+                        var modifiedQuery = $"UPDATE Look " +
                                             $"SET Name = '{name}', Family = '{family}', LifePlace = '{lifeplace}', LongLife = '{longlife}'" +
                                             $"WHERE LookId = {id}";
 
@@ -411,8 +420,8 @@ namespace ZooLab5
                     }
                 }
             }
-            Clear();
             DB.closeConnection();
+            Clear();
         }
         private void UsersSave_button_Click(object sender, EventArgs e)
         {
@@ -449,7 +458,6 @@ namespace ZooLab5
                 var name = LookName_textBox.Text;
                 var family = LookFamily_textBox.Text;
                 var lifeplace = LookLifePlace_textBox.Text;
-
                 int longlife;
 
                 index = dataGridView2.CurrentCell.RowIndex;
@@ -458,8 +466,12 @@ namespace ZooLab5
                 {
                     if(int.TryParse(LookLongLife_textBox.Text, out longlife))
                     {
-                        dataGridView2.Rows[index].SetValues(id, name, family, lifeplace);
+                        dataGridView2.Rows[index].SetValues(id, name, family, lifeplace, longlife);
                         dataGridView2.Rows[index].Cells[5].Value = RowState.Modified;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Тривалість життя повинна мати числовий формат!");
                     }
                 }
             }
@@ -472,5 +484,7 @@ namespace ZooLab5
         {
             Change();
         }
+
+        
     }
 }

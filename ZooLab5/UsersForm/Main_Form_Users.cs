@@ -92,6 +92,7 @@ namespace ZooLab5.UsersForm
                 ReadSingleRows(dgw, reader);
             }
             reader.Close();
+            DB.closeConnection();
             Clear();
         }
 

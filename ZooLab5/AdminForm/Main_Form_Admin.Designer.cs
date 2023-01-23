@@ -50,7 +50,7 @@ namespace ZooLab5
             this.UsersFind_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.UsersClear_Button = new System.Windows.Forms.Button();
-            this.Renew_Button = new System.Windows.Forms.Button();
+            this.UsersRenew_Button = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -75,7 +75,7 @@ namespace ZooLab5
             this.LookFind_textBox = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LookClear_button = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.LookRenew_button = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -108,7 +108,7 @@ namespace ZooLab5
             this.tabPage1.Controls.Add(this.UsersFind_textBox);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.UsersClear_Button);
-            this.tabPage1.Controls.Add(this.Renew_Button);
+            this.tabPage1.Controls.Add(this.UsersRenew_Button);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -302,20 +302,20 @@ namespace ZooLab5
             this.UsersClear_Button.UseVisualStyleBackColor = false;
             this.UsersClear_Button.Click += new System.EventHandler(this.Clear_Button_Click);
             // 
-            // Renew_Button
+            // UsersRenew_Button
             // 
-            this.Renew_Button.BackColor = System.Drawing.Color.DarkGray;
-            this.Renew_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Renew_Button.BackgroundImage")));
-            this.Renew_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Renew_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Renew_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Renew_Button.ForeColor = System.Drawing.Color.DarkGray;
-            this.Renew_Button.Location = new System.Drawing.Point(619, 10);
-            this.Renew_Button.Name = "Renew_Button";
-            this.Renew_Button.Size = new System.Drawing.Size(42, 37);
-            this.Renew_Button.TabIndex = 2;
-            this.Renew_Button.UseVisualStyleBackColor = false;
-            this.Renew_Button.Click += new System.EventHandler(this.Renew_Button_Click);
+            this.UsersRenew_Button.BackColor = System.Drawing.Color.DarkGray;
+            this.UsersRenew_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UsersRenew_Button.BackgroundImage")));
+            this.UsersRenew_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.UsersRenew_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UsersRenew_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UsersRenew_Button.ForeColor = System.Drawing.Color.DarkGray;
+            this.UsersRenew_Button.Location = new System.Drawing.Point(619, 10);
+            this.UsersRenew_Button.Name = "UsersRenew_Button";
+            this.UsersRenew_Button.Size = new System.Drawing.Size(42, 37);
+            this.UsersRenew_Button.TabIndex = 2;
+            this.UsersRenew_Button.UseVisualStyleBackColor = false;
+            this.UsersRenew_Button.Click += new System.EventHandler(this.UsersRenew_Button_Click);
             // 
             // label1
             // 
@@ -336,7 +336,7 @@ namespace ZooLab5
             this.tabPage2.Controls.Add(this.LookFind_textBox);
             this.tabPage2.Controls.Add(this.pictureBox2);
             this.tabPage2.Controls.Add(this.LookClear_button);
-            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.LookRenew_button);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -568,19 +568,20 @@ namespace ZooLab5
             this.LookClear_button.UseVisualStyleBackColor = false;
             this.LookClear_button.Click += new System.EventHandler(this.LookClear_button_Click);
             // 
-            // button6
+            // LookRenew_button
             // 
-            this.button6.BackColor = System.Drawing.Color.DarkGray;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.DarkGray;
-            this.button6.Location = new System.Drawing.Point(619, 10);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(42, 37);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = false;
+            this.LookRenew_button.BackColor = System.Drawing.Color.DarkGray;
+            this.LookRenew_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LookRenew_button.BackgroundImage")));
+            this.LookRenew_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LookRenew_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LookRenew_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LookRenew_button.ForeColor = System.Drawing.Color.DarkGray;
+            this.LookRenew_button.Location = new System.Drawing.Point(619, 10);
+            this.LookRenew_button.Name = "LookRenew_button";
+            this.LookRenew_button.Size = new System.Drawing.Size(42, 37);
+            this.LookRenew_button.TabIndex = 2;
+            this.LookRenew_button.UseVisualStyleBackColor = false;
+            this.LookRenew_button.Click += new System.EventHandler(this.LookRenew_button_Click);
             // 
             // label14
             // 
@@ -646,7 +647,7 @@ namespace ZooLab5
         private System.Windows.Forms.TextBox UsersFind_textBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button UsersClear_Button;
-        private System.Windows.Forms.Button Renew_Button;
+        private System.Windows.Forms.Button UsersRenew_Button;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel3;
@@ -671,7 +672,7 @@ namespace ZooLab5
         private System.Windows.Forms.TextBox LookFind_textBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button LookClear_button;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button LookRenew_button;
         private System.Windows.Forms.Label label14;
     }
 }

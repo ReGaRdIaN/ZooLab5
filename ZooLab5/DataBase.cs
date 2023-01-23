@@ -12,7 +12,7 @@ namespace ZooLab5
         /// <summary>
         /// Рядок підключення бази даних
         /// </summary>
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ZOOLAB;Integrated Security=True");
+        SqlConnection sqlConnection = new SqlConnection(@"Data Source=192.168.0.37,1433;Initial Catalog=ZOOLAB;User ID=ZOOLAB;Password=12321sdv;");
 
         /// <summary>
         /// Відкрити базу даних

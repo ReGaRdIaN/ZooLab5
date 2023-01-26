@@ -45,7 +45,7 @@ namespace ZooLab5
             // 
             this.Add_Label.BackColor = System.Drawing.Color.DarkGray;
             this.Add_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Add_Label.Location = new System.Drawing.Point(0, -2);
+            this.Add_Label.Location = new System.Drawing.Point(0, 0);
             this.Add_Label.Name = "Add_Label";
             this.Add_Label.Size = new System.Drawing.Size(463, 43);
             this.Add_Label.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace ZooLab5
             // 
             this.AddName_label.AutoSize = true;
             this.AddName_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddName_label.Location = new System.Drawing.Point(45, 61);
+            this.AddName_label.Location = new System.Drawing.Point(45, 63);
             this.AddName_label.Name = "AddName_label";
             this.AddName_label.Size = new System.Drawing.Size(45, 16);
             this.AddName_label.TabIndex = 1;
@@ -66,7 +66,7 @@ namespace ZooLab5
             // 
             this.AddFamily_label.AutoSize = true;
             this.AddFamily_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddFamily_label.Location = new System.Drawing.Point(45, 95);
+            this.AddFamily_label.Location = new System.Drawing.Point(45, 97);
             this.AddFamily_label.Name = "AddFamily_label";
             this.AddFamily_label.Size = new System.Drawing.Size(48, 16);
             this.AddFamily_label.TabIndex = 2;
@@ -76,7 +76,7 @@ namespace ZooLab5
             // 
             this.AddLifePlace_label.AutoSize = true;
             this.AddLifePlace_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddLifePlace_label.Location = new System.Drawing.Point(45, 132);
+            this.AddLifePlace_label.Location = new System.Drawing.Point(45, 134);
             this.AddLifePlace_label.Name = "AddLifePlace_label";
             this.AddLifePlace_label.Size = new System.Drawing.Size(64, 16);
             this.AddLifePlace_label.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace ZooLab5
             // 
             this.AddLongLife_label.AutoSize = true;
             this.AddLongLife_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddLongLife_label.Location = new System.Drawing.Point(45, 170);
+            this.AddLongLife_label.Location = new System.Drawing.Point(45, 172);
             this.AddLongLife_label.Name = "AddLongLife_label";
             this.AddLongLife_label.Size = new System.Drawing.Size(59, 16);
             this.AddLongLife_label.TabIndex = 4;
@@ -94,28 +94,28 @@ namespace ZooLab5
             // 
             // AddName_textBox
             // 
-            this.AddName_textBox.Location = new System.Drawing.Point(120, 60);
+            this.AddName_textBox.Location = new System.Drawing.Point(120, 62);
             this.AddName_textBox.Name = "AddName_textBox";
             this.AddName_textBox.Size = new System.Drawing.Size(186, 20);
             this.AddName_textBox.TabIndex = 5;
             // 
             // AddFamily_textBox
             // 
-            this.AddFamily_textBox.Location = new System.Drawing.Point(120, 94);
+            this.AddFamily_textBox.Location = new System.Drawing.Point(120, 96);
             this.AddFamily_textBox.Name = "AddFamily_textBox";
             this.AddFamily_textBox.Size = new System.Drawing.Size(186, 20);
             this.AddFamily_textBox.TabIndex = 6;
             // 
             // AddLifePlace_textBox
             // 
-            this.AddLifePlace_textBox.Location = new System.Drawing.Point(120, 131);
+            this.AddLifePlace_textBox.Location = new System.Drawing.Point(120, 133);
             this.AddLifePlace_textBox.Name = "AddLifePlace_textBox";
             this.AddLifePlace_textBox.Size = new System.Drawing.Size(186, 20);
             this.AddLifePlace_textBox.TabIndex = 7;
             // 
             // AddLongLife_textBox
             // 
-            this.AddLongLife_textBox.Location = new System.Drawing.Point(120, 169);
+            this.AddLongLife_textBox.Location = new System.Drawing.Point(120, 171);
             this.AddLongLife_textBox.Name = "AddLongLife_textBox";
             this.AddLongLife_textBox.Size = new System.Drawing.Size(186, 20);
             this.AddLongLife_textBox.TabIndex = 8;
@@ -123,7 +123,7 @@ namespace ZooLab5
             // SaveAdd_button
             // 
             this.SaveAdd_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveAdd_button.Location = new System.Drawing.Point(151, 204);
+            this.SaveAdd_button.Location = new System.Drawing.Point(151, 206);
             this.SaveAdd_button.Name = "SaveAdd_button";
             this.SaveAdd_button.Size = new System.Drawing.Size(108, 33);
             this.SaveAdd_button.TabIndex = 9;

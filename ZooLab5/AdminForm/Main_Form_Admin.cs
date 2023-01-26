@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZooLab5.AdminForm;
 
 namespace ZooLab5
 {
@@ -435,6 +436,9 @@ namespace ZooLab5
         
 
 
+        /// <summary>
+        /// Зміна даних
+        /// </summary>
         private void Change()
         {
             int index;
@@ -485,6 +489,28 @@ namespace ZooLab5
             Change();
         }
 
-        
+
+
+        private void Add()
+        {
+            if(tabControl1.SelectedIndex == 0)
+            {
+                UsersAdd userform = new UsersAdd();
+                userform.Show();
+            }
+            else
+            {
+                LookAdd lookadd = new LookAdd();
+                lookadd.Show();
+            }
+        }
+        private void UsersNew_button_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
+        private void LookAdd_button_Click(object sender, EventArgs e)
+        {
+            Add();
+        }
     }
 }

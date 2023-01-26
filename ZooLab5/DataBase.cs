@@ -12,7 +12,7 @@ namespace ZooLab5
         /// <summary>
         /// Рядок підключення бази даних
         /// </summary>
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=192.168.0.37,1433;Initial Catalog=ZOOLAB;User ID=ZOOLAB;Password=12321sdv;");
+        SqlConnection sqlConnection = new SqlConnection(@"Server=tcp:testsqldb12.database.windows.net,1433;Initial Catalog=ZOOLAB;Persist Security Info=False;User ID=db12;Password=12321SdV;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
         /// <summary>
         /// Відкрити базу даних

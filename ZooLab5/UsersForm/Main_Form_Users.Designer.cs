@@ -74,6 +74,7 @@ namespace ZooLab5.UsersForm
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(885, 618);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -111,7 +112,7 @@ namespace ZooLab5.UsersForm
             this.Save_button.Location = new System.Drawing.Point(24, 162);
             this.Save_button.Name = "Save_button";
             this.Save_button.Size = new System.Drawing.Size(75, 23);
-            this.Save_button.TabIndex = 12;
+            this.Save_button.TabIndex = 9;
             this.Save_button.Text = "Зберігти";
             this.Save_button.UseVisualStyleBackColor = true;
             this.Save_button.Click += new System.EventHandler(this.Save_button_Click);
@@ -121,7 +122,7 @@ namespace ZooLab5.UsersForm
             this.Change_button.Location = new System.Drawing.Point(24, 132);
             this.Change_button.Name = "Change_button";
             this.Change_button.Size = new System.Drawing.Size(75, 23);
-            this.Change_button.TabIndex = 11;
+            this.Change_button.TabIndex = 8;
             this.Change_button.Text = "Змінити";
             this.Change_button.UseVisualStyleBackColor = true;
             this.Change_button.Click += new System.EventHandler(this.Change_button_Click);
@@ -131,7 +132,7 @@ namespace ZooLab5.UsersForm
             this.Delete_button.Location = new System.Drawing.Point(24, 99);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(75, 23);
-            this.Delete_button.TabIndex = 10;
+            this.Delete_button.TabIndex = 7;
             this.Delete_button.Text = "Видалити";
             this.Delete_button.UseVisualStyleBackColor = true;
             this.Delete_button.Click += new System.EventHandler(this.Delete_button_Click);
@@ -141,7 +142,7 @@ namespace ZooLab5.UsersForm
             this.New_button.Location = new System.Drawing.Point(24, 51);
             this.New_button.Name = "New_button";
             this.New_button.Size = new System.Drawing.Size(75, 38);
-            this.New_button.TabIndex = 9;
+            this.New_button.TabIndex = 6;
             this.New_button.Text = "Новий запис";
             this.New_button.UseVisualStyleBackColor = true;
             this.New_button.Click += new System.EventHandler(this.New_button_Click);
@@ -173,42 +174,43 @@ namespace ZooLab5.UsersForm
             this.panel1.Location = new System.Drawing.Point(20, 370);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(416, 195);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 1;
+            this.panel1.TabStop = true;
             // 
             // Name_textBox
             // 
             this.Name_textBox.Location = new System.Drawing.Point(170, 73);
             this.Name_textBox.Name = "Name_textBox";
             this.Name_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Name_textBox.TabIndex = 8;
+            this.Name_textBox.TabIndex = 2;
             // 
             // Family_textBox
             // 
             this.Family_textBox.Location = new System.Drawing.Point(170, 106);
             this.Family_textBox.Name = "Family_textBox";
             this.Family_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Family_textBox.TabIndex = 9;
+            this.Family_textBox.TabIndex = 3;
             // 
             // ID_textBox
             // 
             this.ID_textBox.Location = new System.Drawing.Point(170, 38);
             this.ID_textBox.Name = "ID_textBox";
             this.ID_textBox.Size = new System.Drawing.Size(174, 20);
-            this.ID_textBox.TabIndex = 10;
+            this.ID_textBox.TabIndex = 1;
             // 
             // LifePlace_textBox
             // 
             this.LifePlace_textBox.Location = new System.Drawing.Point(170, 138);
             this.LifePlace_textBox.Name = "LifePlace_textBox";
             this.LifePlace_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LifePlace_textBox.TabIndex = 11;
+            this.LifePlace_textBox.TabIndex = 4;
             // 
             // LongLife_textBox
             // 
             this.LongLife_textBox.Location = new System.Drawing.Point(170, 168);
             this.LongLife_textBox.Name = "LongLife_textBox";
             this.LongLife_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LongLife_textBox.TabIndex = 12;
+            this.LongLife_textBox.TabIndex = 5;
             // 
             // label7
             // 
@@ -280,6 +282,7 @@ namespace ZooLab5.UsersForm
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(862, 282);
             this.dataGridView1.TabIndex = 6;
+            this.dataGridView1.TabStop = false;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Find_textBox
@@ -288,7 +291,8 @@ namespace ZooLab5.UsersForm
             this.Find_textBox.Location = new System.Drawing.Point(715, 14);
             this.Find_textBox.Name = "Find_textBox";
             this.Find_textBox.Size = new System.Drawing.Size(155, 29);
-            this.Find_textBox.TabIndex = 5;
+            this.Find_textBox.TabIndex = 4;
+            this.Find_textBox.TabStop = false;
             this.Find_textBox.TextChanged += new System.EventHandler(this.Find_textBox_TextChanged);
             // 
             // pictureBox1
@@ -312,7 +316,8 @@ namespace ZooLab5.UsersForm
             this.Clear_Button.Location = new System.Drawing.Point(571, 10);
             this.Clear_Button.Name = "Clear_Button";
             this.Clear_Button.Size = new System.Drawing.Size(42, 37);
-            this.Clear_Button.TabIndex = 3;
+            this.Clear_Button.TabIndex = 2;
+            this.Clear_Button.TabStop = false;
             this.Clear_Button.UseVisualStyleBackColor = false;
             this.Clear_Button.Click += new System.EventHandler(this.Clear_Button_Click);
             // 
@@ -327,7 +332,8 @@ namespace ZooLab5.UsersForm
             this.Renew_Button.Location = new System.Drawing.Point(619, 10);
             this.Renew_Button.Name = "Renew_Button";
             this.Renew_Button.Size = new System.Drawing.Size(42, 37);
-            this.Renew_Button.TabIndex = 2;
+            this.Renew_Button.TabIndex = 3;
+            this.Renew_Button.TabStop = false;
             this.Renew_Button.UseVisualStyleBackColor = false;
             this.Renew_Button.Click += new System.EventHandler(this.Renew_Button_Click);
             // 

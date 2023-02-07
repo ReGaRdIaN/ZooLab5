@@ -20,15 +20,12 @@ namespace ZooLab5
         }
         private void Add_Form_Load(object sender, EventArgs e)
         {
-
         }
 
         /// <summary>
         /// Зберегти додані дані
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SaveAdd_button_Click(object sender, EventArgs e)
+        private void Save()
         {
             DB.openConnection();
             var name = AddName_textBox.Text;
@@ -36,21 +33,28 @@ namespace ZooLab5
             var lifeplace = AddLifePlace_textBox.Text;
             int longlife;
 
-            
-            if(int.TryParse(AddLongLife_textBox.Text, out longlife))
+
+            if (int.TryParse(AddLongLife_textBox.Text, out longlife))
             {
-                string AddQuery = $"INSERT INTO Look (Name, Family, LifePlace, LongLife)" +
-                                  $"VALUES" +
-                                  $"('{name}', '{family}', '{lifeplace}', '{longlife}')";
+                if (name == string.Empty || family == string.Empty || lifeplace == string.Empty || longlife == 0)
+                {
+                    MessageBox.Show("Усі поля мають бути заповнені!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string AddQuery = $"INSERT INTO Look (Name, Family, LifePlace, LongLife)" +
+                                      $"VALUES" +
+                                      $"('{name}', '{family}', '{lifeplace}', '{longlife}')";
 
-                SqlCommand command = new SqlCommand(AddQuery, DB.getConnection());
-                command.ExecuteNonQuery();
+                    SqlCommand command = new SqlCommand(AddQuery, DB.getConnection());
+                    command.ExecuteNonQuery();
 
-                MessageBox.Show("Запис доданий", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                AddName_textBox.Text = "";
-                AddFamily_textBox.Text = "";
-                AddLifePlace_textBox.Text = "";
-                AddLongLife_textBox.Text = "";
+                    MessageBox.Show("Запис доданий", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    AddName_textBox.Text = "";
+                    AddFamily_textBox.Text = "";
+                    AddLifePlace_textBox.Text = "";
+                    AddLongLife_textBox.Text = "";
+                }             
             }
             else
             {
@@ -58,6 +62,11 @@ namespace ZooLab5
             }
 
             DB.closeConnection();
+        }
+        
+        private void SaveAdd_button_Click(object sender, EventArgs e)
+        {
+            Save();
         }
     }
 }

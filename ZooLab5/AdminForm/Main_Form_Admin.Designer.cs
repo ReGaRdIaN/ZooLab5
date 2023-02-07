@@ -99,6 +99,7 @@ namespace ZooLab5
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(885, 618);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabStop = false;
             // 
             // tabPage1
             // 
@@ -136,7 +137,7 @@ namespace ZooLab5
             this.UsersSave_button.Location = new System.Drawing.Point(24, 162);
             this.UsersSave_button.Name = "UsersSave_button";
             this.UsersSave_button.Size = new System.Drawing.Size(75, 23);
-            this.UsersSave_button.TabIndex = 12;
+            this.UsersSave_button.TabIndex = 7;
             this.UsersSave_button.Text = "Зберігти";
             this.UsersSave_button.UseVisualStyleBackColor = true;
             this.UsersSave_button.Click += new System.EventHandler(this.UsersSave_button_Click);
@@ -146,7 +147,7 @@ namespace ZooLab5
             this.UsersChange_button.Location = new System.Drawing.Point(24, 132);
             this.UsersChange_button.Name = "UsersChange_button";
             this.UsersChange_button.Size = new System.Drawing.Size(75, 23);
-            this.UsersChange_button.TabIndex = 11;
+            this.UsersChange_button.TabIndex = 6;
             this.UsersChange_button.Text = "Змінити";
             this.UsersChange_button.UseVisualStyleBackColor = true;
             this.UsersChange_button.Click += new System.EventHandler(this.UsersChange_button_Click);
@@ -156,7 +157,7 @@ namespace ZooLab5
             this.UsersDelete_button.Location = new System.Drawing.Point(24, 99);
             this.UsersDelete_button.Name = "UsersDelete_button";
             this.UsersDelete_button.Size = new System.Drawing.Size(75, 23);
-            this.UsersDelete_button.TabIndex = 10;
+            this.UsersDelete_button.TabIndex = 5;
             this.UsersDelete_button.Text = "Видалити";
             this.UsersDelete_button.UseVisualStyleBackColor = true;
             this.UsersDelete_button.Click += new System.EventHandler(this.UsersDelete_button_Click);
@@ -166,7 +167,7 @@ namespace ZooLab5
             this.UsersNew_button.Location = new System.Drawing.Point(24, 51);
             this.UsersNew_button.Name = "UsersNew_button";
             this.UsersNew_button.Size = new System.Drawing.Size(75, 38);
-            this.UsersNew_button.TabIndex = 9;
+            this.UsersNew_button.TabIndex = 4;
             this.UsersNew_button.Text = "Новий запис";
             this.UsersNew_button.UseVisualStyleBackColor = true;
             this.UsersNew_button.Click += new System.EventHandler(this.UsersNew_button_Click);
@@ -201,21 +202,22 @@ namespace ZooLab5
             this.Login_textBox.Location = new System.Drawing.Point(168, 99);
             this.Login_textBox.Name = "Login_textBox";
             this.Login_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Login_textBox.TabIndex = 8;
+            this.Login_textBox.TabIndex = 2;
             // 
             // Pass_textBox
             // 
             this.Pass_textBox.Location = new System.Drawing.Point(168, 132);
             this.Pass_textBox.Name = "Pass_textBox";
             this.Pass_textBox.Size = new System.Drawing.Size(174, 20);
-            this.Pass_textBox.TabIndex = 9;
+            this.Pass_textBox.TabIndex = 3;
             // 
             // ID_textBox
             // 
             this.ID_textBox.Location = new System.Drawing.Point(168, 64);
             this.ID_textBox.Name = "ID_textBox";
+            this.ID_textBox.ReadOnly = true;
             this.ID_textBox.Size = new System.Drawing.Size(174, 20);
-            this.ID_textBox.TabIndex = 10;
+            this.ID_textBox.TabIndex = 1;
             // 
             // label5
             // 
@@ -276,6 +278,7 @@ namespace ZooLab5
             this.UsersFind_textBox.Name = "UsersFind_textBox";
             this.UsersFind_textBox.Size = new System.Drawing.Size(155, 29);
             this.UsersFind_textBox.TabIndex = 5;
+            this.UsersFind_textBox.TabStop = false;
             this.UsersFind_textBox.TextChanged += new System.EventHandler(this.UsersFind_textBox_TextChanged);
             // 
             // pictureBox1
@@ -300,6 +303,7 @@ namespace ZooLab5
             this.UsersClear_Button.Name = "UsersClear_Button";
             this.UsersClear_Button.Size = new System.Drawing.Size(42, 37);
             this.UsersClear_Button.TabIndex = 3;
+            this.UsersClear_Button.TabStop = false;
             this.UsersClear_Button.UseVisualStyleBackColor = false;
             this.UsersClear_Button.Click += new System.EventHandler(this.Clear_Button_Click);
             // 
@@ -315,6 +319,7 @@ namespace ZooLab5
             this.UsersRenew_Button.Name = "UsersRenew_Button";
             this.UsersRenew_Button.Size = new System.Drawing.Size(42, 37);
             this.UsersRenew_Button.TabIndex = 2;
+            this.UsersRenew_Button.TabStop = false;
             this.UsersRenew_Button.UseVisualStyleBackColor = false;
             this.UsersRenew_Button.Click += new System.EventHandler(this.UsersRenew_Button_Click);
             // 
@@ -365,7 +370,7 @@ namespace ZooLab5
             this.LookSave_button.Location = new System.Drawing.Point(24, 162);
             this.LookSave_button.Name = "LookSave_button";
             this.LookSave_button.Size = new System.Drawing.Size(75, 23);
-            this.LookSave_button.TabIndex = 12;
+            this.LookSave_button.TabIndex = 9;
             this.LookSave_button.Text = "Зберігти";
             this.LookSave_button.UseVisualStyleBackColor = true;
             this.LookSave_button.Click += new System.EventHandler(this.LookSave_button_Click);
@@ -375,7 +380,7 @@ namespace ZooLab5
             this.LookChange_button.Location = new System.Drawing.Point(24, 132);
             this.LookChange_button.Name = "LookChange_button";
             this.LookChange_button.Size = new System.Drawing.Size(75, 23);
-            this.LookChange_button.TabIndex = 11;
+            this.LookChange_button.TabIndex = 8;
             this.LookChange_button.Text = "Змінити";
             this.LookChange_button.UseVisualStyleBackColor = true;
             this.LookChange_button.Click += new System.EventHandler(this.LookChange_button_Click);
@@ -385,7 +390,7 @@ namespace ZooLab5
             this.LookDelete_button.Location = new System.Drawing.Point(24, 99);
             this.LookDelete_button.Name = "LookDelete_button";
             this.LookDelete_button.Size = new System.Drawing.Size(75, 23);
-            this.LookDelete_button.TabIndex = 10;
+            this.LookDelete_button.TabIndex = 7;
             this.LookDelete_button.Text = "Видалити";
             this.LookDelete_button.UseVisualStyleBackColor = true;
             this.LookDelete_button.Click += new System.EventHandler(this.LookDelete_button_Click);
@@ -395,7 +400,7 @@ namespace ZooLab5
             this.LookAdd_button.Location = new System.Drawing.Point(24, 51);
             this.LookAdd_button.Name = "LookAdd_button";
             this.LookAdd_button.Size = new System.Drawing.Size(75, 38);
-            this.LookAdd_button.TabIndex = 9;
+            this.LookAdd_button.TabIndex = 6;
             this.LookAdd_button.Text = "Новий запис";
             this.LookAdd_button.UseVisualStyleBackColor = true;
             this.LookAdd_button.Click += new System.EventHandler(this.LookAdd_button_Click);
@@ -404,7 +409,7 @@ namespace ZooLab5
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(18, 7);
+            this.label6.Location = new System.Drawing.Point(18, -1);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 31);
             this.label6.TabIndex = 9;
@@ -434,35 +439,36 @@ namespace ZooLab5
             this.LookName_textBox.Location = new System.Drawing.Point(170, 73);
             this.LookName_textBox.Name = "LookName_textBox";
             this.LookName_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LookName_textBox.TabIndex = 8;
+            this.LookName_textBox.TabIndex = 2;
             // 
             // LookFamily_textBox
             // 
             this.LookFamily_textBox.Location = new System.Drawing.Point(170, 106);
             this.LookFamily_textBox.Name = "LookFamily_textBox";
             this.LookFamily_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LookFamily_textBox.TabIndex = 9;
+            this.LookFamily_textBox.TabIndex = 3;
             // 
             // LookId_textBox
             // 
             this.LookId_textBox.Location = new System.Drawing.Point(170, 38);
             this.LookId_textBox.Name = "LookId_textBox";
+            this.LookId_textBox.ReadOnly = true;
             this.LookId_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LookId_textBox.TabIndex = 10;
+            this.LookId_textBox.TabIndex = 1;
             // 
             // LookLifePlace_textBox
             // 
             this.LookLifePlace_textBox.Location = new System.Drawing.Point(170, 138);
             this.LookLifePlace_textBox.Name = "LookLifePlace_textBox";
             this.LookLifePlace_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LookLifePlace_textBox.TabIndex = 11;
+            this.LookLifePlace_textBox.TabIndex = 4;
             // 
             // LookLongLife_textBox
             // 
             this.LookLongLife_textBox.Location = new System.Drawing.Point(170, 168);
             this.LookLongLife_textBox.Name = "LookLongLife_textBox";
             this.LookLongLife_textBox.Size = new System.Drawing.Size(174, 20);
-            this.LookLongLife_textBox.TabIndex = 12;
+            this.LookLongLife_textBox.TabIndex = 5;
             // 
             // label7
             // 
@@ -543,6 +549,7 @@ namespace ZooLab5
             this.LookFind_textBox.Name = "LookFind_textBox";
             this.LookFind_textBox.Size = new System.Drawing.Size(155, 29);
             this.LookFind_textBox.TabIndex = 5;
+            this.LookFind_textBox.TabStop = false;
             this.LookFind_textBox.TextChanged += new System.EventHandler(this.LookFind_textBox_TextChanged);
             // 
             // pictureBox2
@@ -567,6 +574,7 @@ namespace ZooLab5
             this.LookClear_button.Name = "LookClear_button";
             this.LookClear_button.Size = new System.Drawing.Size(42, 37);
             this.LookClear_button.TabIndex = 3;
+            this.LookClear_button.TabStop = false;
             this.LookClear_button.UseVisualStyleBackColor = false;
             this.LookClear_button.Click += new System.EventHandler(this.LookClear_button_Click);
             // 
@@ -582,6 +590,7 @@ namespace ZooLab5
             this.LookRenew_button.Name = "LookRenew_button";
             this.LookRenew_button.Size = new System.Drawing.Size(42, 37);
             this.LookRenew_button.TabIndex = 2;
+            this.LookRenew_button.TabStop = false;
             this.LookRenew_button.UseVisualStyleBackColor = false;
             this.LookRenew_button.Click += new System.EventHandler(this.LookRenew_button_Click);
             // 
@@ -645,7 +654,6 @@ namespace ZooLab5
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox UsersFind_textBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button UsersClear_Button;
@@ -676,5 +684,6 @@ namespace ZooLab5
         private System.Windows.Forms.Button LookClear_button;
         private System.Windows.Forms.Button LookRenew_button;
         private System.Windows.Forms.Label label14;
+        protected System.Windows.Forms.DataGridView dataGridView1;
     }
 }

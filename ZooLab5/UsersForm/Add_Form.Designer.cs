@@ -97,28 +97,28 @@ namespace ZooLab5
             this.AddName_textBox.Location = new System.Drawing.Point(120, 62);
             this.AddName_textBox.Name = "AddName_textBox";
             this.AddName_textBox.Size = new System.Drawing.Size(186, 20);
-            this.AddName_textBox.TabIndex = 5;
+            this.AddName_textBox.TabIndex = 1;
             // 
             // AddFamily_textBox
             // 
             this.AddFamily_textBox.Location = new System.Drawing.Point(120, 96);
             this.AddFamily_textBox.Name = "AddFamily_textBox";
             this.AddFamily_textBox.Size = new System.Drawing.Size(186, 20);
-            this.AddFamily_textBox.TabIndex = 6;
+            this.AddFamily_textBox.TabIndex = 2;
             // 
             // AddLifePlace_textBox
             // 
             this.AddLifePlace_textBox.Location = new System.Drawing.Point(120, 133);
             this.AddLifePlace_textBox.Name = "AddLifePlace_textBox";
             this.AddLifePlace_textBox.Size = new System.Drawing.Size(186, 20);
-            this.AddLifePlace_textBox.TabIndex = 7;
+            this.AddLifePlace_textBox.TabIndex = 3;
             // 
             // AddLongLife_textBox
             // 
             this.AddLongLife_textBox.Location = new System.Drawing.Point(120, 171);
             this.AddLongLife_textBox.Name = "AddLongLife_textBox";
             this.AddLongLife_textBox.Size = new System.Drawing.Size(186, 20);
-            this.AddLongLife_textBox.TabIndex = 8;
+            this.AddLongLife_textBox.TabIndex = 4;
             // 
             // SaveAdd_button
             // 

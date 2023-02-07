@@ -46,18 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminForm\LookAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminForm\LookAdd.Designer.cs">
-      <DependentUpon>LookAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminForm\UsersAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminForm\UsersAdd.Designer.cs">
-      <DependentUpon>UsersAdd.cs</DependentUpon>
-    </Compile>
     <Compile Include="AuthoRegForms\Authorization_From.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,12 +85,6 @@
     <Compile Include="UsersForm\Main_Form_Users.Designer.cs">
       <DependentUpon>Main_Form_Users.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminForm\LookAdd.resx">
-      <DependentUpon>LookAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm\UsersAdd.resx">
-      <DependentUpon>UsersAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UsersForm\Add_Form.resx">
       <DependentUpon>Add_Form.cs</DependentUpon>
     </EmbeddedResource>

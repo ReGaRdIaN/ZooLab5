@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZooLab5.AdminForm;
 
 namespace ZooLab5
 {
@@ -307,39 +306,67 @@ namespace ZooLab5
         /// </summary>
         private void DeleteRow()
         {
-            int index;
+            DB.openConnection();
+
             if (tabControl1.SelectedIndex == 0)
             {
-                index = dataGridView1.CurrentCell.RowIndex;
-
-                dataGridView1.Rows[index].Visible = false;
-
-                if (dataGridView1.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                if (dataGridView1.SelectedRows.Count == 0)
                 {
-                    dataGridView1.Rows[index].Cells[3].Value = RowState.Deleted;
-                    return;
+                    MessageBox.Show("Оберіть потрібні рядки", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var UserIndex = dataGridView1.SelectedRows;
+                    foreach (DataGridViewRow row in UserIndex)
+                    {
+
+                        row.Visible = false;
+                        var id = Convert.ToInt32(row.Cells[0].Value);
+
+                        var deleteQuery = $"DELETE FROM Users " +
+                                          $"WHERE UserId = {id}";
+
+
+                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
-            else
+            else if(tabControl1.SelectedIndex == 1)
             {
-                index = dataGridView2.CurrentCell.RowIndex;
-
-                dataGridView2.Rows[index].Visible = false;
-
-                if(dataGridView2.Rows[index].Cells[0].Value.ToString() != string.Empty)
+                if(dataGridView2.SelectedRows.Count == 0)
                 {
-                    dataGridView2.Rows[index].Cells[5].Value = RowState.Deleted;
-                    return;
+                    MessageBox.Show("Оберіть потрібні рядки", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    var LookIndex = dataGridView2.SelectedRows;
+                    foreach (DataGridViewRow row in LookIndex)
+                    {
+
+                        row.Visible = false;
+                        var id = Convert.ToInt32(row.Cells[0].Value);
+
+                        var deleteQuery = $"DELETE FROM Look " +
+                                          $"WHERE LookId = {id}";
+
+
+                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+                    }
                 }
             }
+            DB.closeConnection();
         }
         private void UsersDelete_button_Click(object sender, EventArgs e)
         {
             DeleteRow();
+            Renew();
         }
         private void LookDelete_button_Click(object sender, EventArgs e)
         {
             DeleteRow();
+            Renew();
         }
 
         
@@ -360,28 +387,6 @@ namespace ZooLab5
                     {
                         continue;
                     }
-                    if(UsersRowState == RowState.Deleted)
-                    {
-                        var id = Convert.ToInt32(dataGridView1.Rows[UsersIndex].Cells[0].Value);
-
-                        var deleteQuery = $"DELETE FROM Users " +
-                                          $"WHERE UserId = {id}";
-
-                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
-                        command.ExecuteNonQuery();
-                    }
-                    if(UsersRowState == RowState.Modified)
-                    {
-                        var id = Convert.ToInt32(dataGridView1.Rows[UsersIndex].Cells[0].Value);
-                        var password = dataGridView1.Rows[UsersIndex].Cells[1].Value.ToString();
-                        var login = dataGridView1.Rows[UsersIndex].Cells[2].Value.ToString();
-
-                        var modifiedQuery = $"UPDATE Users " +
-                                            $"SET UserPass = '{password}', UserLogin = '{login}'" +
-                                            $"WHERE UserId = {id}";
-                        SqlCommand command = new SqlCommand(modifiedQuery, DB.getConnection());
-                        command.ExecuteNonQuery();
-                    }
                 }
             }
             else if(tabControl1.SelectedIndex == 1)
@@ -393,31 +398,6 @@ namespace ZooLab5
                     if(LookRowState == RowState.Existed)
                     {
                         continue;
-                    }
-                    if(LookRowState == RowState.Deleted)
-                    {
-                        var id = Convert.ToInt32(dataGridView2.Rows[LookIndex].Cells[5].Value);
-
-                        var deleteQuery = $"DELETE FROM Look " +
-                                          $"WHERE LookId = {id}";
-
-                        SqlCommand command = new SqlCommand(deleteQuery, DB.getConnection());
-                        command.ExecuteNonQuery();
-                    }
-                    if(LookRowState == RowState.Modified)
-                    {
-                        var id = Convert.ToInt32(dataGridView2.Rows[LookIndex].Cells[0].Value);
-                        var name = dataGridView2.Rows[LookIndex].Cells[1].Value.ToString();
-                        var family = dataGridView2.Rows[LookIndex].Cells[2].Value.ToString();
-                        var lifeplace = dataGridView2.Rows[LookIndex].Cells[3].Value.ToString();
-                        var longlife = dataGridView2.Rows[LookIndex].Cells[4].Value.ToString();
-
-                        var modifiedQuery = $"UPDATE Look " +
-                                            $"SET Name = '{name}', Family = '{family}', LifePlace = '{lifeplace}', LongLife = '{longlife}'" +
-                                            $"WHERE LookId = {id}";
-
-                        SqlCommand command = new SqlCommand(modifiedQuery, DB.getConnection());
-                        command.ExecuteNonQuery();
                     }
                 }
             }
@@ -491,18 +471,145 @@ namespace ZooLab5
 
 
 
-        private void Add()
+        private void CheckIndex()
         {
-            if(tabControl1.SelectedIndex == 0)
+            if (tabControl1.SelectedIndex == 0)
             {
-                UsersAdd userform = new UsersAdd();
-                userform.Show();
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    int indexpoind = 1;
+                    for (int UsersIndex = 0; UsersIndex < dataGridView1.Rows.Count; UsersIndex++)
+                    {
+                        var index = Convert.ToInt32(dataGridView1.Rows[UsersIndex].Cells[0].Value);
+                        var firstCheckindex = index;
+                        if (Convert.ToInt32(dataGridView1.Rows[0].Cells[0].Value) != 1)
+                        {
+                            string resetID = $"DBCC CHECKIDENT ( Users,  RESEED, 0)";
+                            SqlCommand command = new SqlCommand(resetID, DB.getConnection());
+                            command.ExecuteNonQuery();
+                        }
+                        else if ((indexpoind == --firstCheckindex) || (indexpoind == index))
+                        {
+                            string resetNewID = $"DBCC CHECKIDENT ( Users,  RESEED, {index})";
+                            SqlCommand command1 = new SqlCommand(resetNewID, DB.getConnection());
+                            command1.ExecuteNonQuery();
+                            indexpoind = index;
+                        }
+                        else
+                        {
+                            string resetNewID = $"DBCC CHECKIDENT ( Users,  RESEED, {indexpoind})";
+                            SqlCommand command1 = new SqlCommand(resetNewID, DB.getConnection());
+                            command1.ExecuteNonQuery();
+                        }
+                    }
+                }
+                else
+                {
+                    string resetID = $"DBCC CHECKIDENT ( Users,  RESEED, 0)";
+                    SqlCommand command = new SqlCommand(resetID, DB.getConnection());
+                    command.ExecuteNonQuery();
+                }
             }
             else
             {
-                LookAdd lookadd = new LookAdd();
-                lookadd.Show();
+                if (dataGridView2.Rows.Count > 0)
+                {
+                    int indexpoind = 1;
+                    for (int LookIndex = 0; LookIndex < dataGridView2.Rows.Count; LookIndex++)
+                    {
+                        var index = Convert.ToInt32(dataGridView2.Rows[LookIndex].Cells[0].Value);
+                        var firstCheckindex = index;
+                        if (Convert.ToInt32(dataGridView2.Rows[0].Cells[0].Value) != 1)
+                        {
+                            string resetID = $"DBCC CHECKIDENT ( Look,  RESEED, 0)";
+                            SqlCommand command = new SqlCommand(resetID, DB.getConnection());
+                            command.ExecuteNonQuery();
+                        }
+                        else if ((indexpoind == --firstCheckindex) || (indexpoind == index))
+                        {
+                            string resetNewID = $"DBCC CHECKIDENT ( Look,  RESEED, {index})";
+                            SqlCommand command1 = new SqlCommand(resetNewID, DB.getConnection());
+                            command1.ExecuteNonQuery();
+                            indexpoind = index;
+                        }
+                        else
+                        {
+                            string resetNewID = $"DBCC CHECKIDENT ( Look,  RESEED, {indexpoind})";
+                            SqlCommand command1 = new SqlCommand(resetNewID, DB.getConnection());
+                            command1.ExecuteNonQuery();
+                        }
+                    }
+                }
+                else
+                {
+                    string resetID = $"DBCC CHECKIDENT ( Look,  RESEED, 0)";
+                    SqlCommand command = new SqlCommand(resetID, DB.getConnection());
+                    command.ExecuteNonQuery();
+                }
             }
+        }
+        private void Add()
+        {
+            DB.openConnection();
+            CheckIndex();
+            if (tabControl1.SelectedIndex == 0)
+            {
+                var password = Pass_textBox.Text;
+                var login = Login_textBox.Text;
+
+                if (password == string.Empty || login == string.Empty)
+                {
+                    MessageBox.Show("Усі поля мають бути заповнені!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string addQuery = $"INSERT INTO Users (UserPass, UserLogin) " +
+                                      $"VALUES ('{password }' ,'{login}')";
+                    SqlCommand command = new SqlCommand(addQuery, DB.getConnection());
+                    command.ExecuteNonQuery();
+
+
+                    MessageBox.Show("Запис успішно доданий!", "Успіх", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Pass_textBox.Text = string.Empty;
+                    Login_textBox.Text = string.Empty;
+                }
+                Renew();
+                DB.openConnection();
+                CheckIndex();
+            }
+            else
+            {
+                var name = LookName_textBox.Text;
+                var family = LookFamily_textBox.Text;
+                var lifeplace = LookLifePlace_textBox.Text;
+                int longlife;
+
+                if (int.TryParse(LookLongLife_textBox.Text, out longlife))
+                {
+                    if (name == string.Empty || family == string.Empty || lifeplace == string.Empty || longlife == 0)
+                    {
+                        MessageBox.Show("Усі поля мають бути заповненими!", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        string addQuery = $"INSERT INTO Look (Name, Family, LifePlace, LongLife) " +
+                                          $"VALUES ('{name}', '{family}', '{lifeplace}', '{longlife}')";
+
+                        SqlCommand command = new SqlCommand(addQuery, DB.getConnection());
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Запис успішно доданий!", "Успіх!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LookName_textBox.Text = string.Empty;
+                        LookFamily_textBox.Text = string.Empty;
+                        LookLifePlace_textBox.Text = string.Empty;
+                        LookLongLife_textBox.Text = string.Empty;
+                    }
+                }
+                Renew();
+                DB.openConnection();
+                CheckIndex();
+            }
+            DB.closeConnection();
         }
         private void UsersNew_button_Click(object sender, EventArgs e)
         {
